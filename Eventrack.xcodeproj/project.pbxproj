@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D46C091FDFF685D270CF2413 /* Pods_Eventrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ED294C97B0B8DB7D1DF912 /* Pods_Eventrack.framework */; };
+		D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0531EB8F0CB006AA004 /* weekendViewController.swift */; };
+		D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0571EB8F2C3006AA004 /* popularViewController.swift */; };
+		D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B332901EB8990E00B2137B /* favouriteViewController.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
 		D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */; };
 		D8C2C9F61EB46CB9002F6F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		8E57EE249B0C24369B211AC0 /* Pods_EventrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9A4EE97008DC8762ADC44 /* Pods-Eventrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventrack/Pods-Eventrack.release.xcconfig"; sourceTree = "<group>"; };
 		A904DAA61F4AB1A0AAAC1704 /* Pods_EventrackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D836E0531EB8F0CB006AA004 /* weekendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weekendViewController.swift; sourceTree = "<group>"; };
+		D836E0571EB8F2C3006AA004 /* popularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popularViewController.swift; sourceTree = "<group>"; };
+		D8B332901EB8990E00B2137B /* favouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favouriteViewController.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 				D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */,
 				D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */,
 				D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */,
+				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
+				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
+				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
 				D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */,
 				D8C2C9FC1EB46CB9002F6F36 /* LaunchScreen.storyboard */,
 				D8C2C9FF1EB46CB9002F6F36 /* Info.plist */,
@@ -453,8 +462,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */,
 				D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */,
+				D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */,
 				D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */,
+				D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */,
 				D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +718,7 @@
 				D8C2CA1A1EB46CB9002F6F36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8C2CA1B1EB46CB9002F6F36 /* Build configuration list for PBXNativeTarget "EventrackTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +727,7 @@
 				D8C2CA1D1EB46CB9002F6F36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8C2CA1E1EB46CB9002F6F36 /* Build configuration list for PBXNativeTarget "EventrackUITests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +736,7 @@
 				D8C2CA201EB46CB9002F6F36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
