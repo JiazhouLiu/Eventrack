@@ -364,14 +364,14 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 @end
 
 
-//@implementation SWContextTransitionObject
-//{
-//    __weak SWRevealViewController *_revealVC;
-//    UIView *_view;
-//    UIViewController *_toVC;
-//    UIViewController *_fromVC;
-//    void (^_completion)(void);
-//}
+@implementation SWContextTransitionObject
+{
+    __weak SWRevealViewController *_revealVC;
+    UIView *_view;
+    UIViewController *_toVC;
+    UIViewController *_fromVC;
+    void (^_completion)(void);
+}
 
 
 - (id)initWithRevealController:(SWRevealViewController*)revealVC containerView:(UIView*)view fromVC:(UIViewController*)fromVC
@@ -762,12 +762,12 @@ const int FrontViewPositionNone = 0xff;
 }
 
 
-//- (NSUInteger)supportedInterfaceOrientations
-//{
-//    // we could have simply not implemented this, but we choose to call super to make explicit that we
-//    // want the default behavior.
-//    return [super supportedInterfaceOrientations];
-//}
+- (NSUInteger)supportedInterfaceOrientations
+{
+    // we could have simply not implemented this, but we choose to call super to make explicit that we
+    // want the default behavior.
+    return [super supportedInterfaceOrientations];
+}
 
 
 #pragma mark - Public methods and property accessors

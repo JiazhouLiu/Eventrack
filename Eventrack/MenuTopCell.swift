@@ -1,5 +1,5 @@
 //
-//  MenuBottomTableViewCell.swift
+//  MenuTopCell.swift
 //  Eventrack
 //
 //  Created by Jiazhou Liu on 5/5/17.
@@ -8,10 +8,17 @@
 
 import UIKit
 
-class MenuBottomTableViewCell: UITableViewCell {
+class MenuTopCell: UITableViewCell {
 
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        loginBtn.backgroundColor = .clear
+        loginBtn.layer.cornerRadius = 5
+        loginBtn.layer.borderWidth = 1
+        loginBtn.layer.borderColor = UIColor.white.cgColor
         // Initialization code
     }
 

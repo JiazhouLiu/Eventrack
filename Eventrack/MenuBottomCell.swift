@@ -1,5 +1,5 @@
 //
-//  MenuTopTableViewCell.swift
+//  MenuBottomCell.swift
 //  Eventrack
 //
 //  Created by Jiazhou Liu on 5/5/17.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class MenuTopTableViewCell: UITableViewCell {
+class MenuBottomCell: UITableViewCell {
 
+    @IBOutlet weak var menuImg: UIImageView!
+    @IBOutlet weak var menuText: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

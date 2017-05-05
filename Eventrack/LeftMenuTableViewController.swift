@@ -13,8 +13,6 @@ class LeftMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,9 +35,9 @@ class LeftMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch (section){
-        case 0: return 1
-        case 1: return 3
-        default: return 0
+            case 0: return 1
+            case 1: return 5
+            default: return 0
         }
     }
 
@@ -47,11 +45,29 @@ class LeftMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath)
-            
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuBottomTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuBottomTableViewCell", for: indexPath) as! MenuBottomCell
+            
+            switch (indexPath.row){
+            case 0:
+                cell.menuText.text = "Create an Event"
+                cell.menuImg.image = #imageLiteral(resourceName: "Add-Events")
+            case 1:
+                cell.menuText.text = "My Events"
+                cell.menuImg.image = #imageLiteral(resourceName: "My-Events")
+            case 2:
+                cell.menuText.text = "My Tickets"
+                cell.menuImg.image = #imageLiteral(resourceName: "My-Tickets")
+            case 3:
+                cell.menuText.text = "My Favourites"
+                cell.menuImg.image = #imageLiteral(resourceName: "Favourite-Event")
+            case 4:
+                cell.menuText.text = "Search Events"
+                cell.menuImg.image = #imageLiteral(resourceName: "Search-Events")
+            default: return cell
+            }
             
             return cell
         }
@@ -63,7 +79,7 @@ class LeftMenuTableViewController: UITableViewController {
             return 230.0
         }
         else{
-            return 80.0;
+            return 60.0;
         }
         
     }

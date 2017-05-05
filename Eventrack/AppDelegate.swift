@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Customize top staus bar background and text color
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
-        view.backgroundColor = uicolorFromHex(rgbValue: 0x2B8A36)
+        view.backgroundColor = UIColor(red: 43/255.0, green: 138/255.0, blue: 54/255.0, alpha: 0.1)
         self.window?.rootViewController?.view.addSubview(view)
         // Top status bar text color to light
         UIApplication.shared.statusBarStyle = .lightContent
