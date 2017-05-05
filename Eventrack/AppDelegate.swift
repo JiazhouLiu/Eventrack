@@ -19,15 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Firebase Application configuration
         FIRApp.configure()
+        
+        // Customize top navigation bar
         let navigationBarAppearace = UINavigationBar.appearance()
         
         navigationBarAppearace.tintColor = uicolorFromHex(rgbValue: 0xffffff)
         navigationBarAppearace.barTintColor = uicolorFromHex(rgbValue: 0x2B8A36)
+        navigationBarAppearace.backgroundColor = uicolorFromHex(rgbValue: 0x2B8A36)
+        
+        // Customize top staus bar background and text color
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
         view.backgroundColor = uicolorFromHex(rgbValue: 0x2B8A36)
         self.window?.rootViewController?.view.addSubview(view)
+        // Top status bar text color to light
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        // Customize bottom tab bar text color
+        UITabBar.appearance().tintColor = UIColor(red: 43/255.0, green: 138/255.0, blue: 54/255.0, alpha: 1.0)
+        
+        // 
+
         return true
     }
 
@@ -109,3 +122,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+

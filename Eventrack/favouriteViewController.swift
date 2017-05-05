@@ -9,10 +9,14 @@
 import UIKit
 
 class favouriteViewController: UIViewController {
+    
+    @IBOutlet weak var navMenuButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,14 @@ class favouriteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if self.revealViewController() != nil {
+            navMenuButton.target = self.revealViewController()
+            navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -37,5 +49,5 @@ class favouriteViewController: UIViewController {
         
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
-
+    
 }

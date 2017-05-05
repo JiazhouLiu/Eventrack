@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UgH-rK-QwI">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H0X-B9-t3M">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favourite-->
+        <!--Favourite View Controller-->
         <scene sceneID="RfJ-9d-8bj">
             <objects>
                 <viewController id="p8r-AS-m75" customClass="favouriteViewController" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,31 +19,23 @@
                         <viewControllerLayoutGuide type="bottom" id="Ody-m1-jdN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hoh-Je-Pnk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2P-ea-Hy8" customClass="fa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem id="4F6-9U-yHv">
-                                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="afv-1W-f0h"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourite" image="Favourite-Black" selectedImage="Favourite-Black" id="bLI-8W-TMk"/>
+                    <navigationItem key="navigationItem" id="4F6-9U-yHv">
+                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="afv-1W-f0h"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navMenuButton" destination="afv-1W-f0h" id="ybh-Yz-Zbh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axq-hF-Sxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="556"/>
+            <point key="canvasLocation" x="870" y="72"/>
         </scene>
-        <!--Weekend-->
+        <!--Weekend View Controller-->
         <scene sceneID="kJf-4e-cus">
             <objects>
                 <viewController id="EY5-qt-iAZ" customClass="weekendViewController" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,35 +44,22 @@
                         <viewControllerLayoutGuide type="bottom" id="aS5-7t-npb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ATm-ii-gVG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-Nq-QAE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="textShadowColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem id="asn-Qr-zbt">
-                                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="QyZ-ZD-QYY"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weekend" image="Weekend-Black" selectedImage="Weekend-Black" id="jmG-A5-5xr"/>
+                    <navigationItem key="navigationItem" id="asn-Qr-zbt">
+                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="QyZ-ZD-QYY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navMenuButton" destination="QyZ-ZD-QYY" id="eXf-Rv-Gih"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvv-On-Mbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="842"/>
+            <point key="canvasLocation" x="113" y="779"/>
         </scene>
-        <!--Popular-->
+        <!--Popular View Controller-->
         <scene sceneID="bZD-8V-udj">
             <objects>
                 <viewController id="ZaI-AL-itV" customClass="popularViewController" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,53 +68,222 @@
                         <viewControllerLayoutGuide type="bottom" id="XgR-eJ-jCi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="or4-tY-eAj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="SqN-vH-i95">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem id="hUZ-cv-oij">
-                                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="jbt-wi-8li"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Popular" image="Popular-Black" selectedImage="Popular-Black" id="nfB-yL-yJx"/>
+                    <navigationItem key="navigationItem" id="hUZ-cv-oij">
+                        <barButtonItem key="leftBarButtonItem" title="Eventrack" id="jbt-wi-8li"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navMenuButton" destination="jbt-wi-8li" id="tuK-3O-Gnl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5J-Ix-5Gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760.79999999999995" y="-86.806596701649184"/>
+            <point key="canvasLocation" x="871" y="-568"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Reveal View Controller-->
+        <scene sceneID="1es-Ef-1MK">
+            <objects>
+                <viewController title="Reveal View Controller" id="H0X-B9-t3M" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sYG-FO-oFP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gts-lu-ulu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gwq-ZC-mH7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="UgH-rK-QwI" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Ccv-Ef-F8R"/>
+                        <segue destination="1EZ-un-1YL" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="vqd-nF-kJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1s-Ye-AA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1564" y="31"/>
+        </scene>
+        <!--Tab Bar View Controller-->
         <scene sceneID="hgC-Fq-1Lo">
             <objects>
-                <tabBarController id="UgH-rK-QwI" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="UgH-rK-QwI" customClass="TabBarViewController" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="FUz-Xd-oMk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.16862745098039217" green="0.54117647058823526" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="ZaI-AL-itV" kind="relationship" relationship="viewControllers" id="7Gt-sN-Xcz"/>
-                        <segue destination="p8r-AS-m75" kind="relationship" relationship="viewControllers" id="uh5-2S-Y3M"/>
-                        <segue destination="EY5-qt-iAZ" kind="relationship" relationship="viewControllers" id="52p-uZ-wCH"/>
+                        <segue destination="gAy-uY-IHr" kind="relationship" relationship="viewControllers" id="7Gt-sN-Xcz"/>
+                        <segue destination="aO1-nj-pQU" kind="relationship" relationship="viewControllers" id="uh5-2S-Y3M"/>
+                        <segue destination="Kre-2a-SHZ" kind="relationship" relationship="viewControllers" id="52p-uZ-wCH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7g5-3V-jSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="137"/>
+            <point key="canvasLocation" x="-745" y="72"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="Ou2-0p-eLB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gAy-uY-IHr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" image="Popular-Black" selectedImage="Popular-Black" id="nfB-yL-yJx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPg-gi-shk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZaI-AL-itV" kind="relationship" relationship="rootViewController" id="vti-fS-fcM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVh-LF-mE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-568"/>
+        </scene>
+        <!--Favourite-->
+        <scene sceneID="QNK-eF-CNU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aO1-nj-pQU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourite" image="Favourite-Black" selectedImage="Favourite-Black" id="bLI-8W-TMk">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="0.16862745098039217" green="0.54117647058823526" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sOK-PW-X6P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p8r-AS-m75" kind="relationship" relationship="rootViewController" id="oGp-WQ-oP4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2D-R0-P4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="72"/>
+        </scene>
+        <!--Left Menu Table View Controller-->
+        <scene sceneID="caZ-Op-3Rk">
+            <objects>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="1EZ-un-1YL" customClass="LeftMenuTableViewController" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="1" sectionFooterHeight="20" id="ulI-j1-WQp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTopTableViewCell" rowHeight="240" id="LMf-DY-XCi" customClass="MenuTopTableViewCell" customModule="Eventrack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55" width="414" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LMf-DY-XCi" id="mbf-nn-qYc">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mgQ-72-XSV">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="229"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eventrack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auv-mX-Feo">
+                                            <rect key="frame" x="83" y="49" width="185" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="K6T-10-TvN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place to track events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akx-Vc-rGl">
+                                            <rect key="frame" x="83" y="97" width="185" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="TXh-cL-PBl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-fH-yYC">
+                                            <rect key="frame" x="122" y="155" width="107" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="107" id="bt9-5M-Ec4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Log In">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mgQ-72-XSV" firstAttribute="centerX" secondItem="auv-mX-Feo" secondAttribute="centerX" id="0tk-AX-VI2"/>
+                                        <constraint firstItem="akx-Vc-rGl" firstAttribute="centerX" secondItem="DYq-fH-yYC" secondAttribute="centerX" id="5RW-Mg-z6L"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DYq-fH-yYC" secondAttribute="bottom" constant="41.666666666666657" id="6SY-Qa-kxN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mgQ-72-XSV" secondAttribute="bottom" constant="2.6666666666666572" id="CPQ-Yq-p1x"/>
+                                        <constraint firstItem="auv-mX-Feo" firstAttribute="top" secondItem="mbf-nn-qYc" secondAttribute="topMargin" constant="41" id="PVp-rr-ekT"/>
+                                        <constraint firstItem="mgQ-72-XSV" firstAttribute="leading" secondItem="mbf-nn-qYc" secondAttribute="leading" id="QHz-vY-Jyh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mgQ-72-XSV" secondAttribute="trailing" constant="56" id="fSs-fH-OOj"/>
+                                        <constraint firstItem="DYq-fH-yYC" firstAttribute="top" secondItem="akx-Vc-rGl" secondAttribute="bottom" constant="38" id="knj-A0-K5i"/>
+                                        <constraint firstItem="akx-Vc-rGl" firstAttribute="top" secondItem="auv-mX-Feo" secondAttribute="bottom" constant="26" id="lzd-gf-DTA"/>
+                                        <constraint firstItem="auv-mX-Feo" firstAttribute="leading" secondItem="akx-Vc-rGl" secondAttribute="leading" id="nxP-HP-KQv"/>
+                                        <constraint firstItem="mgQ-72-XSV" firstAttribute="top" secondItem="mbf-nn-qYc" secondAttribute="top" id="rWh-tF-frI"/>
+                                        <constraint firstItem="auv-mX-Feo" firstAttribute="trailing" secondItem="akx-Vc-rGl" secondAttribute="trailing" id="ruv-mn-dOB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuBottomTableViewCell" id="0tG-s8-7Tf" customClass="MenuBottomTableViewCell" customModule="Eventrack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="295" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0tG-s8-7Tf" id="5gG-aC-9P9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="1EZ-un-1YL" id="sZ0-ZZ-39c"/>
+                            <outlet property="delegate" destination="1EZ-un-1YL" id="0cp-Dj-09b"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjt-S2-frB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1565" y="788"/>
+        </scene>
+        <!--Weekend-->
+        <scene sceneID="dsN-Gt-hCv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kre-2a-SHZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weekend" image="Weekend-Black" selectedImage="Weekend-Black" id="jmG-A5-5xr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mav-qX-M18">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EY5-qt-iAZ" kind="relationship" relationship="rootViewController" id="B7O-Eo-zJ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4f-Zi-KsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="780"/>
         </scene>
     </scenes>
     <resources>
         <image name="Favourite-Black" width="28" height="28"/>
         <image name="Popular-Black" width="32" height="32"/>
+        <image name="StarBackground" width="988" height="556"/>
         <image name="Weekend-Black" width="28" height="28"/>
     </resources>
+    <color key="tintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

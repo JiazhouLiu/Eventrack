@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D46C091FDFF685D270CF2413 /* Pods_Eventrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ED294C97B0B8DB7D1DF912 /* Pods_Eventrack.framework */; };
+		D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */; };
+		D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */; };
+		D82FBB511EBC527400CDCBAE /* MenuTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB501EBC527400CDCBAE /* MenuTopTableViewCell.swift */; };
+		D82FBB531EBC529B00CDCBAE /* MenuBottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB521EBC529B00CDCBAE /* MenuBottomTableViewCell.swift */; };
 		D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0531EB8F0CB006AA004 /* weekendViewController.swift */; };
 		D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0571EB8F2C3006AA004 /* popularViewController.swift */; };
+		D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */; };
 		D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B332901EB8990E00B2137B /* favouriteViewController.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
 		D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */; };
@@ -51,8 +56,15 @@
 		8E57EE249B0C24369B211AC0 /* Pods_EventrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9A4EE97008DC8762ADC44 /* Pods-Eventrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventrack/Pods-Eventrack.release.xcconfig"; sourceTree = "<group>"; };
 		A904DAA61F4AB1A0AAAC1704 /* Pods_EventrackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
+		D82FBB501EBC527400CDCBAE /* MenuTopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTopTableViewCell.swift; sourceTree = "<group>"; };
+		D82FBB521EBC529B00CDCBAE /* MenuBottomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBottomTableViewCell.swift; sourceTree = "<group>"; };
 		D836E0531EB8F0CB006AA004 /* weekendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weekendViewController.swift; sourceTree = "<group>"; };
 		D836E0571EB8F2C3006AA004 /* popularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popularViewController.swift; sourceTree = "<group>"; };
+		D857FECA1EBC0B1200097BE3 /* Eventrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventrack-Bridging-Header.h"; sourceTree = "<group>"; };
+		D857FECB1EBC0B1300097BE3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D8B332901EB8990E00B2137B /* favouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favouriteViewController.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +134,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D857FECB1EBC0B1300097BE3 /* SWRevealViewController.h */,
+				D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */,
+				D857FECA1EBC0B1200097BE3 /* Eventrack-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		D8C2C9E41EB46CB8002F6F36 = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +169,17 @@
 		D8C2C9EF1EB46CB8002F6F36 /* Eventrack */ = {
 			isa = PBXGroup;
 			children = (
+				D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */,
 				D8C2CA211EB471A3002F6F36 /* GoogleService-Info.plist */,
 				D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */,
 				D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */,
 				D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */,
-				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
+				D82FBB521EBC529B00CDCBAE /* MenuBottomTableViewCell.swift */,
+				D82FBB501EBC527400CDCBAE /* MenuTopTableViewCell.swift */,
+				D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */,
+				D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */,
 				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
+				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
 				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
 				D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */,
 				D8C2C9FC1EB46CB9002F6F36 /* LaunchScreen.storyboard */,
@@ -257,6 +284,7 @@
 				TargetAttributes = {
 					D8C2C9EC1EB46CB8002F6F36 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					D8C2CA031EB46CB9002F6F36 = {
@@ -462,10 +490,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
+				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
 				D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */,
 				D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */,
+				D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */,
 				D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */,
 				D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */,
+				D82FBB511EBC527400CDCBAE /* MenuTopTableViewCell.swift in Sources */,
+				D82FBB531EBC529B00CDCBAE /* MenuBottomTableViewCell.swift in Sources */,
 				D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */,
 				D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */,
 			);
@@ -620,10 +653,13 @@
 			baseConfigurationReference = 41AD7DC582FBD63BC939663D /* Pods-Eventrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Eventrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.Eventrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eventrack/Eventrack-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -633,10 +669,12 @@
 			baseConfigurationReference = A4B9A4EE97008DC8762ADC44 /* Pods-Eventrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Eventrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.Eventrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Eventrack/Eventrack-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

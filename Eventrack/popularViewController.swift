@@ -9,15 +9,40 @@
 import UIKit
 
 class popularViewController: UIViewController {
+    
+    @IBOutlet weak var navMenuButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
+
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.revealViewController() != nil {
+            revealViewController().rearViewRevealWidth = 300
+            navMenuButton.target = self.revealViewController()
+            navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+            edgePan.edges = .left
+            self.view.addGestureRecognizer(edgePan)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
+        }
+        
+    }
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            print("Screen edge swiped!")
+        }
     }
     
     
