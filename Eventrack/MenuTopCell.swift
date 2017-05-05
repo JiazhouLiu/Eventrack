@@ -10,6 +10,7 @@ import UIKit
 
 class MenuTopCell: UITableViewCell {
 
+    @IBOutlet weak var MenuTopTitle: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     
     override func awakeFromNib() {

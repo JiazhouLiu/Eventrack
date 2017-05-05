@@ -10,6 +10,8 @@
 		D46C091FDFF685D270CF2413 /* Pods_Eventrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ED294C97B0B8DB7D1DF912 /* Pods_Eventrack.framework */; };
 		D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192421EBC78B500D4B191 /* MenuTopCell.swift */; };
 		D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */; };
+		D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192461EBC9D6D00D4B191 /* LoginVC.swift */; };
+		D811924A1EBCACD400D4B191 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192491EBCACD400D4B191 /* AuthService.swift */; };
 		D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */; };
 		D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */; };
 		D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0531EB8F0CB006AA004 /* weekendViewController.swift */; };
@@ -58,6 +60,8 @@
 		A904DAA61F4AB1A0AAAC1704 /* Pods_EventrackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81192421EBC78B500D4B191 /* MenuTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTopCell.swift; sourceTree = "<group>"; };
 		D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBottomCell.swift; sourceTree = "<group>"; };
+		D81192461EBC9D6D00D4B191 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D81192491EBCACD400D4B191 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		D836E0531EB8F0CB006AA004 /* weekendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weekendViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D81192481EBCACB200D4B191 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D81192491EBCACD400D4B191 /* AuthService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 		D8C2C9EF1EB46CB8002F6F36 /* Eventrack */ = {
 			isa = PBXGroup;
 			children = (
+				D81192481EBCACB200D4B191 /* Services */,
 				D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */,
 				D8C2CA211EB471A3002F6F36 /* GoogleService-Info.plist */,
 				D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */,
@@ -181,6 +194,7 @@
 				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
 				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
 				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
+				D81192461EBC9D6D00D4B191 /* LoginVC.swift */,
 				D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */,
 				D8C2C9FC1EB46CB9002F6F36 /* LaunchScreen.storyboard */,
 				D8C2C9FF1EB46CB9002F6F36 /* Info.plist */,
@@ -492,9 +506,11 @@
 			files = (
 				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
 				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
+				D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */,
 				D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */,
 				D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */,
 				D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */,
+				D811924A1EBCACD400D4B191 /* AuthService.swift in Sources */,
 				D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */,
 				D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */,
 				D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */,

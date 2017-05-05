@@ -7,6 +7,7 @@ target 'Eventrack' do
 
   # Pods for Eventrack
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   target 'EventrackTests' do
     inherit! :search_paths
     # Pods for testing

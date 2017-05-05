@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LeftMenuTableViewController: UITableViewController {
 
@@ -44,7 +45,18 @@ class LeftMenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath) as! MenuTopCell
+            if FIRAuth.auth()?.currentUser == nil{
+                cell.MenuTopTitle.text = "Eventrack"
+                print("Not Logged In")
+                cell.loginBtn.setTitle("Log In", for: .normal)
+                cell.loginBtn.addTarget(self, action: #selector(loginFC(button:)), for: .touchUpInside)
+            }else{
+                cell.MenuTopTitle.text = "Eventrack"
+                print("Logged In")
+                cell.loginBtn.setTitle("Log Out", for: .normal)
+                cell.loginBtn.addTarget(self, action: #selector(logoutFC(button:)), for: .touchUpInside)
+            }
             return cell
         }
         else{
@@ -84,6 +96,37 @@ class LeftMenuTableViewController: UITableViewController {
         
     }
  
+    func loginFC(button: UIButton){
+        performSegue(withIdentifier: "loginVC", sender: nil)
+    }
+    func logoutFC(button: UIButton){
+        AuthService.instance.logout()
+        showToast(message: "Successfully Logged Out")
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateInitialViewController()
+            self.present(vc!, animated: false, completion: nil)
+        }
+    }
+    
+    // toast function for notification
+    func showToast(message : String) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height/2, width: 300, height: 100))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.numberOfLines = 3
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 
     /*
     // Override to support conditional editing of the table view.

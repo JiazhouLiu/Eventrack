@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvv-On-Mbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="779"/>
+            <point key="canvasLocation" x="1018.840579710145" y="778.53260869565224"/>
         </scene>
         <!--Popular View Controller-->
         <scene sceneID="bZD-8V-udj">
@@ -86,7 +86,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="1es-Ef-1MK">
             <objects>
-                <viewController title="Reveal View Controller" id="H0X-B9-t3M" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialVC" title="Reveal View Controller" id="H0X-B9-t3M" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sYG-FO-oFP"/>
                         <viewControllerLayoutGuide type="bottom" id="Gts-lu-ulu"/>
@@ -135,7 +135,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gAy-uY-IHr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Popular" image="Popular-Black" selectedImage="Popular-Black" id="nfB-yL-yJx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="SPg-gi-shk">
+                    <navigationBar key="navigationBar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SPg-gi-shk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,6 +174,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2D-R0-P4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113" y="72"/>
+        </scene>
+        <!--Eventrack-->
+        <scene sceneID="HED-Wg-RPi">
+            <objects>
+                <viewController id="wBU-h0-8Lv" customClass="LoginVC" customModule="Eventrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8QF-lY-pDS"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkD-VQ-oSa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cQL-Rt-e8W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWY-GJ-pBL">
+                                <rect key="frame" x="40" y="140" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="na2-oY-4mc">
+                                <rect key="frame" x="40" y="215" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf9-AI-Sn7">
+                                <rect key="frame" x="125" y="358" width="165" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="wBU-h0-8Lv" eventType="touchUpInside" id="xbV-Gp-kFf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9b-dc-jPJ">
+                                <rect key="frame" x="125" y="451" width="165" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupPressed:" destination="wBU-h0-8Lv" eventType="touchUpInside" id="v4C-ye-ngi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnQ-VC-mw0">
+                                <rect key="frame" x="129" y="579" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Change Password"/>
+                                <connections>
+                                    <action selector="changePwdPressed:" destination="wBU-h0-8Lv" eventType="touchUpInside" id="v9t-Rd-YAB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il0-Lz-zNv">
+                                <rect key="frame" x="124" y="630" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPwdPressed:" destination="wBU-h0-8Lv" eventType="touchUpInside" id="90D-Rj-X0V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Eventrack" id="4in-I4-ez0">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3d7-Vp-7Ou">
+                            <connections>
+                                <segue destination="H0X-B9-t3M" kind="presentation" identifier="loginCancel" id="6zK-Td-b2A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="changePwdBtn" destination="VnQ-VC-mw0" id="vQh-xS-8Ol"/>
+                        <outlet property="forgotPwdBtn" destination="Il0-Lz-zNv" id="B25-gP-1CN"/>
+                        <outlet property="loginBtn" destination="tf9-AI-Sn7" id="Brw-8i-ySX"/>
+                        <outlet property="passwordTF" destination="na2-oY-4mc" id="2bq-mO-n7G"/>
+                        <outlet property="signupBtn" destination="h9b-dc-jPJ" id="FjA-nx-fDA"/>
+                        <outlet property="usernameTF" destination="zWY-GJ-pBL" id="w2V-cV-hq8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEp-H4-oRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2226.0869565217395" y="778.53260869565224"/>
         </scene>
         <!--Left Menu Table View Controller-->
         <scene sceneID="caZ-Op-3Rk">
@@ -238,6 +329,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="MenuTopTitle" destination="auv-mX-Feo" id="aFV-2l-IZw"/>
                                     <outlet property="loginBtn" destination="DYq-fH-yYC" id="ncq-AP-yaN"/>
                                 </connections>
                             </tableViewCell>
@@ -273,10 +365,14 @@
                             <outlet property="delegate" destination="1EZ-un-1YL" id="0cp-Dj-09b"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="lnx-qR-Inj" kind="presentation" identifier="loginVC" id="BG6-Gb-YEN"/>
+                        <segue destination="UgH-rK-QwI" kind="presentation" identifier="loginButtonToHome" id="Wa3-Ri-72a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mjt-S2-frB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1565.217391304348" y="787.50000000000011"/>
+            <point key="canvasLocation" x="-657.97101449275362" y="787.50000000000011"/>
         </scene>
         <!--Weekend-->
         <scene sceneID="dsN-Gt-hCv">
@@ -295,7 +391,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4f-Zi-KsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-746" y="780"/>
+            <point key="canvasLocation" x="160.86956521739131" y="779.34782608695662"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pcF-f7-BKZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lnx-qR-Inj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Sjg-M1-9EB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wBU-h0-8Lv" kind="relationship" relationship="rootViewController" id="Own-uf-4Gp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3cz-8A-tZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1443" y="788"/>
         </scene>
     </scenes>
     <resources>
@@ -304,5 +422,8 @@
         <image name="StarBackground" width="988" height="556"/>
         <image name="Weekend-Black" width="28" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wa3-Ri-72a"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
