@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LeftMenuTableViewController: UITableViewController {
 
@@ -48,12 +49,23 @@ class LeftMenuTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath) as! MenuTopCell
             if FIRAuth.auth()?.currentUser == nil{
                 cell.MenuTopTitle.text = "Eventrack"
-                print("Not Logged In")
                 cell.loginBtn.setTitle("Log In", for: .normal)
                 cell.loginBtn.addTarget(self, action: #selector(loginFC(button:)), for: .touchUpInside)
             }else{
-                cell.MenuTopTitle.text = "Eventrack"
-                print("Logged In")
+                var ref: FIRDatabaseReference!
+                ref = FIRDatabase.database().reference()
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                ref.child("users").child(userID!).child("profile").observeSingleEvent(of: .value, with: { (snapshot) in
+                    // Get user value
+                    let value = snapshot.value as? NSDictionary
+                    let displayName = value?["Display name"] as? String ?? ""
+                    cell.MenuTopTitle.text = displayName
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+                
+                cell.menuDesc.text = "Welcome to Eventrack"
+                
                 cell.loginBtn.setTitle("Log Out", for: .normal)
                 cell.loginBtn.addTarget(self, action: #selector(logoutFC(button:)), for: .touchUpInside)
             }
@@ -102,18 +114,20 @@ class LeftMenuTableViewController: UITableViewController {
     func logoutFC(button: UIButton){
         AuthService.instance.logout()
         showToast(message: "Successfully Logged Out")
-        if let storyboard = self.storyboard {
-            let vc = storyboard.instantiateInitialViewController()
-            self.present(vc!, animated: false, completion: nil)
-        }
+        self.tableView.reloadData()
+//        if let storyboard = self.storyboard {
+//            let vc = storyboard.instantiateInitialViewController()
+//            self.present(vc!, animated: false, completion: nil)
+//        }
+        
     }
     
     // toast function for notification
     func showToast(message : String) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height/2, width: 300, height: 100))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height/2 - 200, width: 250, height: 100))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
-        toastLabel.numberOfLines = 3
+        toastLabel.numberOfLines = 2
         toastLabel.textAlignment = .center;
         toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
         toastLabel.text = message
@@ -121,12 +135,13 @@ class LeftMenuTableViewController: UITableViewController {
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
+        UIView.animate(withDuration: 1.0, delay: 1.0, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.9
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
     }
+
 
     /*
     // Override to support conditional editing of the table view.

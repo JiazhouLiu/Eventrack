@@ -16,7 +16,7 @@ class favouriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
-
+        UINavigationBar.appearance().tintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,10 +28,38 @@ class favouriteViewController: UIViewController {
         if self.revealViewController() != nil {
             navMenuButton.target = self.revealViewController()
             navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            let swipeToRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeToRightVC))
+            swipeToRightGesture.direction = .left
+            let swipeToLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeToLeftVC))
+            swipeToLeftGesture.direction = .right
+            
+            self.view.addGestureRecognizer(swipeToRightGesture)
+            self.view.addGestureRecognizer(swipeToLeftGesture)
+            
+            //let tapScreen = UITapGestureRecognizer(target: self, action: #selector(tapToCloseMenu))
+            //self.view.addGestureRecognizer(tapScreen)
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
-        
     }
+    func swipeToRightVC(_ recognizer: UISwipeGestureRecognizer) {
+        if self.revealViewController().frontViewPosition == FrontViewPosition.right { self.revealViewController().setFrontViewPosition(FrontViewPosition.left, animated: true) }
+        else{
+            Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(switchToWeekendVC), userInfo: nil, repeats: false)
+        }
+    }
+    func swipeToLeftVC(_ recognizer: UISwipeGestureRecognizer) {
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(switchToPopularVC), userInfo: nil, repeats: false)
+    }
+    func switchToPopularVC(){
+        tabBarController?.selectedIndex = 0
+    }
+    func switchToWeekendVC(){
+        tabBarController?.selectedIndex = 2
+    }
+//    func tapToCloseMenu(_ recognizer: UITapGestureRecognizer){
+//        if self.revealViewController().frontViewPosition == FrontViewPosition.right { self.revealViewController().setFrontViewPosition(FrontViewPosition.left, animated: true) }
+//    }
 
     /*
     // MARK: - Navigation

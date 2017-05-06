@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
 
@@ -19,11 +20,38 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.white
+
+        loginBtn.layer.cornerRadius = 10
+        loginBtn.layer.borderWidth = 1
+        loginBtn.layer.borderColor = UIColor.white.cgColor
+        
+        signupBtn.layer.cornerRadius = 10
+        
+        var userFrameRect: CGRect = usernameTF.frame
+        userFrameRect.size.height = 50
+        usernameTF.frame = userFrameRect
+        var passwordFrameRect: CGRect = passwordTF.frame
+        passwordFrameRect.size.height = 50
+        passwordTF.frame = passwordFrameRect
+        
+//        let swipeBackGesture = UISwipeGestureRecognizer(target: self, action: #selector(loginCancel(_:)))
+//        swipeBackGesture.direction = .up
+//        self.view.addGestureRecognizer(swipeBackGesture)
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func loginCancelled(_ sender: Any) {
+        self.performSegue(withIdentifier: "loginCancel", sender: nil)
+    }
+    
 
+//    func loginCancel(_ recognizer: UISwipeGestureRecognizer){
+//        self.performSegue(withIdentifier: "loginCancel", sender: nil)
+//    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,6 +83,7 @@ class LoginVC: UIViewController {
         
     }
     @IBAction func signupPressed(_ sender: Any) {
+        var displayName: String?
         if let email = usernameTF.text, let pass = passwordTF.text, (email.characters.count > 0 && pass.characters.count > 0){
             //call the login service
             AuthService.instance.signup(email: email, password: pass, onComplete: { (errMsg, data) in
@@ -64,11 +93,26 @@ class LoginVC: UIViewController {
                     self.present(alert, animated:true, completion: nil)
                     return
                 }
-                self.showToast(message: "Successfully Signed Up")
-                if let storyboard = self.storyboard {
-                    let vc = storyboard.instantiateInitialViewController()
-                    self.present(vc!, animated: true, completion: nil)
+
+                let alert = UIAlertController(title: "Display Name", message: "You have successfully created a new account. Please enter a display name:", preferredStyle: .alert)
+                alert.addTextField { (textField) in
+                    textField.placeholder = "Display name"
                 }
+                
+                alert.addAction(UIAlertAction(title: "Enter Eventrack", style: .default, handler: { [weak alert] (_) in
+                    if let usernameTextField: UITextField = alert!.textFields?[0] {
+                        if let uid = FIRAuth.auth()?.currentUser?.uid{
+                            displayName = usernameTextField.text!
+                            DataService.instance.saveUser(uid: uid, displayName: displayName!)
+
+                            if let storyboard = self.storyboard {
+                                let vc = storyboard.instantiateInitialViewController()
+                                self.present(vc!, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }))
+                self.present(alert, animated: true, completion: nil)
                 
             })
         }

@@ -16,8 +16,8 @@ class popularViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
+        UINavigationBar.appearance().tintColor = UIColor.white        
 
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,24 +27,37 @@ class popularViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if self.revealViewController() != nil {
+
             revealViewController().rearViewRevealWidth = 300
             navMenuButton.target = self.revealViewController()
             navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
-            edgePan.edges = .left
-            self.view.addGestureRecognizer(edgePan)
+            
+            
+            let swipeToRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeToRightVC))
+            swipeToRightGesture.direction = .left
+            self.view.addGestureRecognizer(swipeToRightGesture)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-
+            
+            //let tapScreen = UITapGestureRecognizer(target: self, action: #selector(tapToCloseMenu))
+            //self.view.addGestureRecognizer(tapScreen)
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+            
         }
         
     }
-    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-            print("Screen edge swiped!")
-        }
+    func swipeToRightVC(_ recognizer: UISwipeGestureRecognizer) {
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(switchToFavouriteVC), userInfo: nil, repeats: false)
     }
-    
+    func switchToFavouriteVC(){
+        tabBarController?.selectedIndex = 1
+    }
+    @IBAction func testBtn(_ sender: Any) {
+        
+        print("Can Clicked")
+    }
+//    func tapToCloseMenu(_ recognizer: UITapGestureRecognizer){
+//        if self.revealViewController().frontViewPosition == FrontViewPosition.right { self.revealViewController().setFrontViewPosition(FrontViewPosition.left, animated: true) }
+//    }
     
     /*
      // MARK: - Navigation

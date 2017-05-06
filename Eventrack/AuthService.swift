@@ -35,7 +35,6 @@ class AuthService {
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
             }else {
                 if user?.uid != nil {
-                    // Try to Log In
                     self.login(email: email, password: password, onComplete: onComplete)
                 }
             }
@@ -49,7 +48,7 @@ class AuthService {
     
     func handleFirebaseError(error: NSError, onComplete: Completion?){
         print(error.debugDescription)
-        if let errorCode = FIRAuthErrorCode(rawValue: error.code){
+        if let errorCode = FIRAuthErrorCode(rawValue: error._code){
             switch (errorCode){
             case .errorCodeInvalidEmail:
                 onComplete?("Invalid email address", nil)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D46C091FDFF685D270CF2413 /* Pods_Eventrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ED294C97B0B8DB7D1DF912 /* Pods_Eventrack.framework */; };
+		D81122501EBDAAF60074CB4A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811224F1EBDAAF60074CB4A /* DataService.swift */; };
 		D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192421EBC78B500D4B191 /* MenuTopCell.swift */; };
 		D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */; };
 		D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192461EBC9D6D00D4B191 /* LoginVC.swift */; };
@@ -19,7 +20,6 @@
 		D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */; };
 		D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B332901EB8990E00B2137B /* favouriteViewController.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
-		D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */; };
 		D8C2C9F61EB46CB9002F6F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */; };
 		D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F71EB46CB9002F6F36 /* Eventrack.xcdatamodeld */; };
 		D8C2C9FB1EB46CB9002F6F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */; };
@@ -58,6 +58,8 @@
 		8E57EE249B0C24369B211AC0 /* Pods_EventrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9A4EE97008DC8762ADC44 /* Pods-Eventrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventrack/Pods-Eventrack.release.xcconfig"; sourceTree = "<group>"; };
 		A904DAA61F4AB1A0AAAC1704 /* Pods_EventrackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81023BD1EBDE0B300BE780B /* Eventrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventrack.entitlements; sourceTree = "<group>"; };
+		D811224F1EBDAAF60074CB4A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D81192421EBC78B500D4B191 /* MenuTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTopCell.swift; sourceTree = "<group>"; };
 		D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBottomCell.swift; sourceTree = "<group>"; };
 		D81192461EBC9D6D00D4B191 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 		D8B332901EB8990E00B2137B /* favouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favouriteViewController.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8C2C9F51EB46CB9002F6F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8C2C9F81EB46CB9002F6F36 /* Eventrack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eventrack.xcdatamodel; sourceTree = "<group>"; };
 		D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,10 +139,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D811224C1EBDAA3E0074CB4A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */,
+				D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */,
+				D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */,
+				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
+				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
+				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
+				D81192461EBC9D6D00D4B191 /* LoginVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D811224D1EBDAAB20074CB4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D811224E1EBDAAC20074CB4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D81192421EBC78B500D4B191 /* MenuTopCell.swift */,
+				D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D81192481EBCACB200D4B191 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				D81192491EBCACD400D4B191 /* AuthService.swift */,
+				D811224F1EBDAAF60074CB4A /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -182,22 +214,16 @@
 			isa = PBXGroup;
 			children = (
 				D81192481EBCACB200D4B191 /* Services */,
-				D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */,
+				D811224D1EBDAAB20074CB4A /* Model */,
+				D811224E1EBDAAC20074CB4A /* View */,
+				D811224C1EBDAA3E0074CB4A /* Controller */,
 				D8C2CA211EB471A3002F6F36 /* GoogleService-Info.plist */,
 				D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */,
-				D8C2C9F21EB46CB8002F6F36 /* ViewController.swift */,
 				D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */,
-				D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */,
-				D81192421EBC78B500D4B191 /* MenuTopCell.swift */,
-				D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */,
-				D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */,
-				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
-				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
-				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
-				D81192461EBC9D6D00D4B191 /* LoginVC.swift */,
-				D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */,
 				D8C2C9FC1EB46CB9002F6F36 /* LaunchScreen.storyboard */,
+				D8C2C9FA1EB46CB9002F6F36 /* Assets.xcassets */,
 				D8C2C9FF1EB46CB9002F6F36 /* Info.plist */,
+				D81023BD1EBDE0B300BE780B /* Eventrack.entitlements */,
 				D8C2C9F71EB46CB9002F6F36 /* Eventrack.xcdatamodeld */,
 			);
 			path = Eventrack;
@@ -298,8 +324,14 @@
 				TargetAttributes = {
 					D8C2C9EC1EB46CB8002F6F36 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = WA4MVD45L2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					D8C2CA031EB46CB9002F6F36 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -505,11 +537,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
+				D81122501EBDAAF60074CB4A /* DataService.swift in Sources */,
 				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
 				D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */,
 				D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */,
 				D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */,
-				D8C2C9F31EB46CB8002F6F36 /* ViewController.swift in Sources */,
 				D811924A1EBCACD400D4B191 /* AuthService.swift in Sources */,
 				D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */,
 				D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */,
@@ -670,6 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WA4MVD45L2;
 				INFOPLIST_FILE = Eventrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.Eventrack;
@@ -686,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WA4MVD45L2;
 				INFOPLIST_FILE = Eventrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = monash.Eventrack;

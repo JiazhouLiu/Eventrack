@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,23 +18,52 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eventrack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcO-fN-zFY">
-                                <rect key="frame" x="135" y="209" width="104" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eventrack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcO-fN-zFY">
+                                <rect key="frame" x="0.0" y="638" width="414" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="1fA-BX-q2i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.16862745100000001" green="0.54117647059999996" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place to track events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDS-n2-y1g">
+                                <rect key="frame" x="0.0" y="674" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UAJ-1N-C5K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="bsE-cB-veH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QDS-n2-y1g" secondAttribute="bottom" constant="41" id="0v4-oy-x9X"/>
+                            <constraint firstItem="bsE-cB-veH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8xX-JC-dRW"/>
+                            <constraint firstItem="XcO-fN-zFY" firstAttribute="leading" secondItem="QDS-n2-y1g" secondAttribute="leading" id="AXy-cY-Xyt"/>
+                            <constraint firstItem="XcO-fN-zFY" firstAttribute="trailing" secondItem="QDS-n2-y1g" secondAttribute="trailing" id="GYm-B3-y4y"/>
+                            <constraint firstItem="XcO-fN-zFY" firstAttribute="top" secondItem="bsE-cB-veH" secondAttribute="bottom" constant="38" id="P8Y-le-lz9"/>
+                            <constraint firstItem="bsE-cB-veH" firstAttribute="leading" secondItem="XcO-fN-zFY" secondAttribute="leading" id="QuC-Tr-zB9"/>
+                            <constraint firstItem="bsE-cB-veH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="emD-8j-dcP"/>
+                            <constraint firstAttribute="trailing" secondItem="bsE-cB-veH" secondAttribute="trailing" id="kOQ-dC-6Ve"/>
+                            <constraint firstItem="QDS-n2-y1g" firstAttribute="top" secondItem="XcO-fN-zFY" secondAttribute="bottom" constant="14" id="lFu-8U-O5n"/>
+                            <constraint firstItem="bsE-cB-veH" firstAttribute="trailing" secondItem="XcO-fN-zFY" secondAttribute="trailing" id="mof-Sk-BdO"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchScreen" width="1200" height="800"/>
+    </resources>
 </document>
