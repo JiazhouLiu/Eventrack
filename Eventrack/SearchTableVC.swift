@@ -10,11 +10,10 @@ import UIKit
 
 class SearchTableVC: UITableViewController {
     
-    @IBOutlet weak var backBarButton: UIBarButtonItem!
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,10 +23,6 @@ class SearchTableVC: UITableViewController {
         
         // change back button text for segue to create screen
         
-    }
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "GoHomeSegue", sender: sender)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,23 +34,47 @@ class SearchTableVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if indexPath.section == 0{
+            return 88.0
+        }
+        else{
+            return 250.0;
+        }
+        
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch (section){
+        case 0: return 1
+        case 1: return 5
+        default: return 0
+        }
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+        if indexPath.section == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchTopCell", for: indexPath) as! SearchTopCell
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchEventCell", for: indexPath) as! RegEventCell
+            return cell
+        }
 
-        return cell
+        
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadData()
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,8 +112,16 @@ class SearchTableVC: UITableViewController {
     */
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-//        
+//        if let cell = sender as? UITableViewCell {
+//            let i = self.tableView.indexPath(for: cell)!.row
+//            if segue.identifier == "SearchToViewSegue" {
+//                let vc = segue.destination as! ViewEventVC
+//                //vc.currentEvent = eventArray[i] as Event
+//                //vc.currentMonster = monsterListArray[i] as Monsters
+//            }
+//        }
 //
 //    }
 
 }
+

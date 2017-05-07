@@ -10,6 +10,15 @@ import UIKit
 
 class MyEventTableVC: UITableViewController {
 
+    @IBOutlet weak var backBtn: UIBarButtonItem!
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateInitialViewController()
+            self.present(vc!, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

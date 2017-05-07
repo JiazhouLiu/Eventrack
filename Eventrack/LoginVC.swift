@@ -46,6 +46,11 @@ class LoginVC: UIViewController {
     @IBAction func loginCancelled(_ sender: Any) {
         self.performSegue(withIdentifier: "loginCancel", sender: nil)
     }
+
+    @IBAction func loginCancelledByX(_ sender: Any) {
+        self.performSegue(withIdentifier: "loginCancel", sender: nil)
+    }
+    
     
 
 //    func loginCancel(_ recognizer: UISwipeGestureRecognizer){

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Jiazhou Liu. All rights reserved.
 //
 
+let FIR_CHILD_USERS = "users"
+
 import Foundation
 import FirebaseDatabase
 
@@ -19,9 +21,20 @@ class DataService{
     var mainRef: FIRDatabaseReference{
         return FIRDatabase.database().reference()
     }
+    var usersRef: FIRDatabaseReference{
+        return mainRef.child(FIR_CHILD_USERS)
+    }
+    var categoryRef: FIRDatabaseReference{
+        return mainRef.child("events").child("eventCategoryList")
+    }
     
     func saveUser(uid: String, displayName: String){
         let profile: Dictionary<String, AnyObject> = ["Display name": displayName as AnyObject, "firstname": "" as AnyObject, "lastname": "" as AnyObject]
-        mainRef.child("users").child(uid).child("profile").setValue(profile)
+        mainRef.child(FIR_CHILD_USERS).child(uid).child("profile").setValue(profile)
     }
+    func saveEventCategory(cat: String){
+        let profile: Dictionary<String, String> = ["Value": cat]
+        mainRef.child("events").child("eventCategoryList").child(cat).setValue(profile)
+    }
+    
 }

@@ -9,6 +9,9 @@
 import UIKit
 
 class CreateEventVC: UIViewController {
+    
+    @IBOutlet weak var backBtn: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,12 @@ class CreateEventVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        if let storyboard = self.storyboard {
+            let vc = storyboard.instantiateInitialViewController()
+            self.present(vc!, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

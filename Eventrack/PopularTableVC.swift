@@ -17,6 +17,7 @@ class PopularTableVC: UITableViewController {
 
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
         UINavigationBar.appearance().tintColor = UIColor.white
+        self.addSampleCat()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +70,30 @@ class PopularTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    func addSampleCat(){
+        DataService.instance.saveEventCategory(cat: "Ceremony")
+        DataService.instance.saveEventCategory(cat: "Concert")
+        DataService.instance.saveEventCategory(cat: "Conference")
+        DataService.instance.saveEventCategory(cat: "Exhibit")
+        DataService.instance.saveEventCategory(cat: "Festival")
+        DataService.instance.saveEventCategory(cat: "Film")
+        DataService.instance.saveEventCategory(cat: "Fundraiser")
+        DataService.instance.saveEventCategory(cat: "Heat Athletics")
+        DataService.instance.saveEventCategory(cat: "Information Session/Fair")
+        DataService.instance.saveEventCategory(cat: "Lecture")
+        DataService.instance.saveEventCategory(cat: "Meeting")
+        DataService.instance.saveEventCategory(cat: "Party")
+        DataService.instance.saveEventCategory(cat: "Performance")
+        DataService.instance.saveEventCategory(cat: "Protest")
+        DataService.instance.saveEventCategory(cat: "Reception")
+        DataService.instance.saveEventCategory(cat: "Recreation and Intramurals")
+        DataService.instance.saveEventCategory(cat: "Reunion")
+        DataService.instance.saveEventCategory(cat: "Seminar")
+        DataService.instance.saveEventCategory(cat: "Theatre")
+        DataService.instance.saveEventCategory(cat: "Thunderbird Athletics")
+        DataService.instance.saveEventCategory(cat: "Workshop")
     }
 
     /*
