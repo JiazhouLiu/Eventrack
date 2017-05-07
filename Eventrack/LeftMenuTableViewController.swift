@@ -107,6 +107,38 @@ class LeftMenuTableViewController: UITableViewController {
         }
         
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let section = indexPath.section
+        if section == 1{
+            switch row{
+            case 0:
+                // Create an event
+                performSegue(withIdentifier: "LeftMenuToCreate", sender: nil)
+                break
+            case 1:
+                // My Events
+                performSegue(withIdentifier: "LeftMenuToMyEvents", sender: nil)
+                break
+            case 2:
+                //My Tickets
+                performSegue(withIdentifier: "LeftMenuToMyTickets", sender: nil)
+                break
+            case 3:
+                //My favourite
+                performSegue(withIdentifier: "LeftMenuToFavouriteSegue", sender: nil)
+                break
+            case 4:
+                // Search Events
+                performSegue(withIdentifier: "LeftMenuToSearchSegue", sender: nil)
+                break
+            default:
+                break
+            }
+        }
+    }
+
  
     func loginFC(button: UIButton){
         performSegue(withIdentifier: "loginVC", sender: nil)
@@ -115,11 +147,6 @@ class LeftMenuTableViewController: UITableViewController {
         AuthService.instance.logout()
         showToast(message: "Successfully Logged Out")
         self.tableView.reloadData()
-//        if let storyboard = self.storyboard {
-//            let vc = storyboard.instantiateInitialViewController()
-//            self.present(vc!, animated: false, completion: nil)
-//        }
-        
     }
     
     // toast function for notification
@@ -178,14 +205,14 @@ class LeftMenuTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "LeftMenuToFavouriteSegue"{
+            let svc = segue.destination as! UITabBarController;
+            svc.selectedIndex = 1
+        }
+        
     }
-    */
 
 }

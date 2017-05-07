@@ -13,12 +13,17 @@
 		D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */; };
 		D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192461EBC9D6D00D4B191 /* LoginVC.swift */; };
 		D811924A1EBCACD400D4B191 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192491EBCACD400D4B191 /* AuthService.swift */; };
+		D82E88121EBEE4A800C6269F /* PopularTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88111EBEE4A800C6269F /* PopularTableVC.swift */; };
+		D82E88141EBEE4BE00C6269F /* FavouriteTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88131EBEE4BE00C6269F /* FavouriteTableVC.swift */; };
+		D82E88161EBEE4CE00C6269F /* WeekendTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88151EBEE4CE00C6269F /* WeekendTableVC.swift */; };
+		D82E88181EBEE4DC00C6269F /* SearchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */; };
+		D82E881A1EBEE50C00C6269F /* MyEventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */; };
+		D82E881C1EBF074A00C6269F /* MyTicketsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */; };
+		D82E881E1EBF076A00C6269F /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881D1EBF076A00C6269F /* CreateEventVC.swift */; };
+		D82E88201EBF078400C6269F /* ViewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881F1EBF078400C6269F /* ViewEventVC.swift */; };
 		D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */; };
 		D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */; };
-		D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0531EB8F0CB006AA004 /* weekendViewController.swift */; };
-		D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836E0571EB8F2C3006AA004 /* popularViewController.swift */; };
 		D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */; };
-		D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B332901EB8990E00B2137B /* favouriteViewController.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
 		D8C2C9F61EB46CB9002F6F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */; };
 		D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F71EB46CB9002F6F36 /* Eventrack.xcdatamodeld */; };
@@ -64,14 +69,19 @@
 		D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBottomCell.swift; sourceTree = "<group>"; };
 		D81192461EBC9D6D00D4B191 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D81192491EBCACD400D4B191 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D82E88111EBEE4A800C6269F /* PopularTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularTableVC.swift; sourceTree = "<group>"; };
+		D82E88131EBEE4BE00C6269F /* FavouriteTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTableVC.swift; sourceTree = "<group>"; };
+		D82E88151EBEE4CE00C6269F /* WeekendTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekendTableVC.swift; sourceTree = "<group>"; };
+		D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableVC.swift; sourceTree = "<group>"; };
+		D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventTableVC.swift; sourceTree = "<group>"; };
+		D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsTableVC.swift; sourceTree = "<group>"; };
+		D82E881D1EBF076A00C6269F /* CreateEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		D82E881F1EBF078400C6269F /* ViewEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventVC.swift; sourceTree = "<group>"; };
 		D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
-		D836E0531EB8F0CB006AA004 /* weekendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weekendViewController.swift; sourceTree = "<group>"; };
-		D836E0571EB8F2C3006AA004 /* popularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popularViewController.swift; sourceTree = "<group>"; };
 		D857FECA1EBC0B1200097BE3 /* Eventrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventrack-Bridging-Header.h"; sourceTree = "<group>"; };
 		D857FECB1EBC0B1300097BE3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		D8B332901EB8990E00B2137B /* favouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = favouriteViewController.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C2C9F51EB46CB9002F6F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,10 +155,15 @@
 				D857FEC91EBC0ACB00097BE3 /* SWRevealViewController */,
 				D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */,
 				D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */,
-				D836E0571EB8F2C3006AA004 /* popularViewController.swift */,
-				D8B332901EB8990E00B2137B /* favouriteViewController.swift */,
-				D836E0531EB8F0CB006AA004 /* weekendViewController.swift */,
 				D81192461EBC9D6D00D4B191 /* LoginVC.swift */,
+				D82E88111EBEE4A800C6269F /* PopularTableVC.swift */,
+				D82E88131EBEE4BE00C6269F /* FavouriteTableVC.swift */,
+				D82E88151EBEE4CE00C6269F /* WeekendTableVC.swift */,
+				D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */,
+				D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */,
+				D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */,
+				D82E881D1EBF076A00C6269F /* CreateEventVC.swift */,
+				D82E881F1EBF078400C6269F /* ViewEventVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -539,16 +554,21 @@
 				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
 				D81122501EBDAAF60074CB4A /* DataService.swift in Sources */,
 				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
+				D82E88161EBEE4CE00C6269F /* WeekendTableVC.swift in Sources */,
 				D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */,
+				D82E88181EBEE4DC00C6269F /* SearchTableVC.swift in Sources */,
+				D82E88141EBEE4BE00C6269F /* FavouriteTableVC.swift in Sources */,
 				D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */,
-				D8B332911EB8990E00B2137B /* favouriteViewController.swift in Sources */,
+				D82E881A1EBEE50C00C6269F /* MyEventTableVC.swift in Sources */,
 				D811924A1EBCACD400D4B191 /* AuthService.swift in Sources */,
 				D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */,
-				D836E0581EB8F2C3006AA004 /* popularViewController.swift in Sources */,
 				D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */,
+				D82E881E1EBF076A00C6269F /* CreateEventVC.swift in Sources */,
 				D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */,
-				D836E0541EB8F0CB006AA004 /* weekendViewController.swift in Sources */,
+				D82E88201EBF078400C6269F /* ViewEventVC.swift in Sources */,
+				D82E88121EBEE4A800C6269F /* PopularTableVC.swift in Sources */,
 				D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */,
+				D82E881C1EBF074A00C6269F /* MyTicketsTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
