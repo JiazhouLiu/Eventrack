@@ -26,10 +26,7 @@ class SearchVC: UIViewController {
                 for (key, _) in cat{
                     self.categories.append(key)
                 }
-                //print("category: \(categoryList)")
             }
-            
-            
         }
         
         tokenView.delegate = self
@@ -88,15 +85,15 @@ extension SearchVC: KSTokenViewDelegate {
         }
         completion!(data as Array<AnyObject>)
     }
+    
     func tokenViewDidEndEditing(_ tokenView: KSTokenView) {
         if let array: Array<KSToken> = tokenView.tokens(){
             for token in array{
                 print("\(token.title) ")
             }
         }
-
-        
     }
+    
     func tokenView(_ token: KSTokenView, displayTitleForObject object: AnyObject) -> String {
         return object as! String
     }
