@@ -43,6 +43,14 @@ class LeftMenuTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func titleTapped(_ sender: Any) {
+        if FIRAuth.auth()?.currentUser != nil{
+            
+            
+            performSegue(withIdentifier: "leftPanelToProfile", sender: nil)
+        }
+    
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
@@ -58,11 +66,12 @@ class LeftMenuTableViewController: UITableViewController {
                 ref.child("users").child(userID!).child("profile").observeSingleEvent(of: .value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
-                    let displayName = value?["Display name"] as? String ?? ""
+                    let displayName = value?["username"] as? String ?? ""
                     cell.MenuTopTitle.text = displayName
                 }) { (error) in
                     print(error.localizedDescription)
                 }
+                
                 
                 cell.menuDesc.text = "Welcome to Eventrack"
                 
@@ -145,8 +154,16 @@ class LeftMenuTableViewController: UITableViewController {
     }
     func logoutFC(button: UIButton){
         AuthService.instance.logout()
-        showToast(message: "Successfully Logged Out")
-        self.tableView.reloadData()
+        let alertController = UIAlertController(title: "Success", message: "You have successfully logged out!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            if let storyboard = self.storyboard {
+                let vc = storyboard.instantiateInitialViewController()
+                self.present(vc!, animated: true, completion: nil)
+            }
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     // toast function for notification

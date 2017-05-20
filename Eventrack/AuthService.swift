@@ -8,6 +8,8 @@
 
 import Foundation
 import FirebaseAuth
+import UIKit
+
 
 typealias Completion = (_ errMsg: String?, _ data: AnyObject?) -> Void
 
@@ -29,12 +31,13 @@ class AuthService {
         })
     }
     
-    func signup(email: String, password: String, onComplete: Completion?){
+    func signup(email: String, username: String, password: String, country: String, data: NSData!, onComplete: Completion?){
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
             }else {
                 if user?.uid != nil {
+                    DataService.instance.setUserInfo(user: user, username: username, password: password, country: country, data: data)
                     self.login(email: email, password: password, onComplete: onComplete)
                 }
             }
@@ -42,8 +45,42 @@ class AuthService {
     }
     
     func logout(){
-        try! FIRAuth.auth()!.signOut()
-
+        do {
+        	try FIRAuth.auth()?.signOut()
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func changeEmail(email: String){
+        FIRAuth.auth()?.currentUser?.updateEmail(email) { (error) in
+            if error == nil {
+                print("Your email has been changed! Thank you")
+            }else{
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+    func changePassword(password: String){
+        FIRAuth.auth()?.currentUser?.updatePassword(password) { (error) in
+            if error == nil {
+                print("Your password has been changed! Thank you")
+            }else{
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+    func resetPassword(email: String){
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
+            if error == nil {
+                print("An email about how to reset password has been sent to you! Thank you")
+            }else{
+                print(error!.localizedDescription)
+            }
+            
+        })
     }
     
     func handleFirebaseError(error: NSError, onComplete: Completion?){

@@ -26,6 +26,12 @@
 		D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */; };
 		D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */; };
 		D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */; };
+		D86AA9A11ED061A6005B3006 /* CustomizableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9A01ED061A6005B3006 /* CustomizableImageView.swift */; };
+		D86AA9A51ED086D1005B3006 /* CustomizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9A41ED086D1005B3006 /* CustomizableButton.swift */; };
+		D86AA9A71ED087C0005B3006 /* CustomizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9A61ED087C0005B3006 /* CustomizableTextField.swift */; };
+		D86AA9A91ED09F6B005B3006 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9A81ED09F6B005B3006 /* MyProfileVC.swift */; };
+		D86AA9AD1ED0B0BC005B3006 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9AC1ED0B0BC005B3006 /* ForgotPasswordVC.swift */; };
+		D86AA9AF1ED0BA5F005B3006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9AE1ED0BA5F005B3006 /* User.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
 		D8C2C9F61EB46CB9002F6F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */; };
 		D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F71EB46CB9002F6F36 /* Eventrack.xcdatamodeld */; };
@@ -34,6 +40,7 @@
 		D8C2CA091EB46CB9002F6F36 /* EventrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2CA081EB46CB9002F6F36 /* EventrackTests.swift */; };
 		D8C2CA141EB46CB9002F6F36 /* EventrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2CA131EB46CB9002F6F36 /* EventrackUITests.swift */; };
 		D8C2CA221EB471A3002F6F36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8C2CA211EB471A3002F6F36 /* GoogleService-Info.plist */; };
+		D8D77BA11ED0197500758077 /* SignUpTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D77BA01ED0197500758077 /* SignUpTVC.swift */; };
 		D8D82BB71EBF4DB0005CBCDC /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D82BB31EBF4DB0005CBCDC /* KSToken.swift */; };
 		D8D82BB81EBF4DB0005CBCDC /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D82BB41EBF4DB0005CBCDC /* KSTokenField.swift */; };
 		D8D82BB91EBF4DB0005CBCDC /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D82BB51EBF4DB0005CBCDC /* KSTokenView.swift */; };
@@ -91,6 +98,12 @@
 		D857FECA1EBC0B1200097BE3 /* Eventrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventrack-Bridging-Header.h"; sourceTree = "<group>"; };
 		D857FECB1EBC0B1300097BE3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D86AA9A01ED061A6005B3006 /* CustomizableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableImageView.swift; sourceTree = "<group>"; };
+		D86AA9A41ED086D1005B3006 /* CustomizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableButton.swift; sourceTree = "<group>"; };
+		D86AA9A61ED087C0005B3006 /* CustomizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTextField.swift; sourceTree = "<group>"; };
+		D86AA9A81ED09F6B005B3006 /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		D86AA9AC1ED0B0BC005B3006 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		D86AA9AE1ED0BA5F005B3006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C2C9F51EB46CB9002F6F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +118,7 @@
 		D8C2CA131EB46CB9002F6F36 /* EventrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventrackUITests.swift; sourceTree = "<group>"; };
 		D8C2CA151EB46CB9002F6F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8C2CA211EB471A3002F6F36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8D77BA01ED0197500758077 /* SignUpTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTVC.swift; sourceTree = "<group>"; };
 		D8D82BB31EBF4DB0005CBCDC /* KSToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSToken.swift; sourceTree = "<group>"; };
 		D8D82BB41EBF4DB0005CBCDC /* KSTokenField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenField.swift; sourceTree = "<group>"; };
 		D8D82BB51EBF4DB0005CBCDC /* KSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenView.swift; sourceTree = "<group>"; };
@@ -170,6 +184,9 @@
 				D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */,
 				D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */,
 				D81192461EBC9D6D00D4B191 /* LoginVC.swift */,
+				D86AA9AC1ED0B0BC005B3006 /* ForgotPasswordVC.swift */,
+				D8D77BA01ED0197500758077 /* SignUpTVC.swift */,
+				D86AA9A81ED09F6B005B3006 /* MyProfileVC.swift */,
 				D82E88111EBEE4A800C6269F /* PopularTableVC.swift */,
 				D82E88131EBEE4BE00C6269F /* FavouriteTableVC.swift */,
 				D82E88151EBEE4CE00C6269F /* WeekendTableVC.swift */,
@@ -186,10 +203,11 @@
 		D811224D1EBDAAB20074CB4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D81192421EBC78B500D4B191 /* MenuTopCell.swift */,
-				D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */,
-				D80DC7D91EBF35CF00C2DB22 /* RegEventCell.swift */,
-				D80DC7DB1EBF42C600C2DB22 /* SearchTopCell.swift */,
+				D81192481EBCACB200D4B191 /* Services */,
+				D86AA9A01ED061A6005B3006 /* CustomizableImageView.swift */,
+				D86AA9A41ED086D1005B3006 /* CustomizableButton.swift */,
+				D86AA9A61ED087C0005B3006 /* CustomizableTextField.swift */,
+				D86AA9AE1ED0BA5F005B3006 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,6 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				D8D82BB21EBF4D8C005CBCDC /* KSTokenView */,
+				D81192421EBC78B500D4B191 /* MenuTopCell.swift */,
+				D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */,
+				D80DC7D91EBF35CF00C2DB22 /* RegEventCell.swift */,
+				D80DC7DB1EBF42C600C2DB22 /* SearchTopCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -246,7 +268,6 @@
 		D8C2C9EF1EB46CB8002F6F36 /* Eventrack */ = {
 			isa = PBXGroup;
 			children = (
-				D81192481EBCACB200D4B191 /* Services */,
 				D811224D1EBDAAB20074CB4A /* Model */,
 				D811224E1EBDAAC20074CB4A /* View */,
 				D811224C1EBDAA3E0074CB4A /* Controller */,
@@ -581,14 +602,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
+				D8D77BA11ED0197500758077 /* SignUpTVC.swift in Sources */,
+				D86AA9A51ED086D1005B3006 /* CustomizableButton.swift in Sources */,
 				D81122501EBDAAF60074CB4A /* DataService.swift in Sources */,
+				D86AA9AF1ED0BA5F005B3006 /* User.swift in Sources */,
 				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
 				D80DC7DC1EBF42C600C2DB22 /* SearchTopCell.swift in Sources */,
 				D82E88161EBEE4CE00C6269F /* WeekendTableVC.swift in Sources */,
+				D86AA9AD1ED0B0BC005B3006 /* ForgotPasswordVC.swift in Sources */,
+				D86AA9A11ED061A6005B3006 /* CustomizableImageView.swift in Sources */,
 				D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */,
 				D82E88181EBEE4DC00C6269F /* SearchTableVC.swift in Sources */,
 				D82E88141EBEE4BE00C6269F /* FavouriteTableVC.swift in Sources */,
 				D8D82BBE1EBF5DC1005CBCDC /* SearchVC.swift in Sources */,
+				D86AA9A71ED087C0005B3006 /* CustomizableTextField.swift in Sources */,
 				D8D82BB81EBF4DB0005CBCDC /* KSTokenField.swift in Sources */,
 				D80DC7DA1EBF35CF00C2DB22 /* RegEventCell.swift in Sources */,
 				D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */,
@@ -602,6 +629,7 @@
 				D82E881E1EBF076A00C6269F /* CreateEventVC.swift in Sources */,
 				D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */,
 				D82E88201EBF078400C6269F /* ViewEventVC.swift in Sources */,
+				D86AA9A91ED09F6B005B3006 /* MyProfileVC.swift in Sources */,
 				D82E88121EBEE4A800C6269F /* PopularTableVC.swift in Sources */,
 				D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */,
 				D82E881C1EBF074A00C6269F /* MyTicketsTableVC.swift in Sources */,

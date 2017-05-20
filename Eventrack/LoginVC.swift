@@ -14,9 +14,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var signupBtn: UIButton!
-    @IBOutlet weak var changePwdBtn: UIButton!
     @IBOutlet weak var forgotPwdBtn: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,6 @@ class LoginVC: UIViewController {
         loginBtn.layer.borderWidth = 1
         loginBtn.layer.borderColor = UIColor.white.cgColor
         
-        signupBtn.layer.cornerRadius = 10
         
         var userFrameRect: CGRect = usernameTF.frame
         userFrameRect.size.height = 50
@@ -73,52 +72,16 @@ class LoginVC: UIViewController {
                     return
                 }
                 
-                self.showToast(message: "Successfully Logged In")
-                if let storyboard = self.storyboard {
-                    let vc = storyboard.instantiateInitialViewController()
-                    self.present(vc!, animated: true, completion: nil)
-                }
-            })
-        }
-        else {
-            let alert = UIAlertController(title: "Username and Password Required", message: "You must enter both a username and a password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-        
-    }
-    @IBAction func signupPressed(_ sender: Any) {
-        var displayName: String?
-        if let email = usernameTF.text, let pass = passwordTF.text, (email.characters.count > 0 && pass.characters.count > 0){
-            //call the login service
-            AuthService.instance.signup(email: email, password: pass, onComplete: { (errMsg, data) in
-                guard errMsg == nil else {
-                    let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
-                    self.present(alert, animated:true, completion: nil)
-                    return
-                }
-
-                let alert = UIAlertController(title: "Display Name", message: "You have successfully created a new account. Please enter a display name:", preferredStyle: .alert)
-                alert.addTextField { (textField) in
-                    textField.placeholder = "Display name"
-                }
+                let alertController = UIAlertController(title: "Success", message: "You have successfully logged in!", preferredStyle: UIAlertControllerStyle.alert)
                 
-                alert.addAction(UIAlertAction(title: "Enter Eventrack", style: .default, handler: { [weak alert] (_) in
-                    if let usernameTextField: UITextField = alert!.textFields?[0] {
-                        if let uid = FIRAuth.auth()?.currentUser?.uid{
-                            displayName = usernameTextField.text!
-                            DataService.instance.saveUser(uid: uid, displayName: displayName!)
-
-                            if let storyboard = self.storyboard {
-                                let vc = storyboard.instantiateInitialViewController()
-                                self.present(vc!, animated: true, completion: nil)
-                            }
-                        }
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                    if let storyboard = self.storyboard {
+                        let vc = storyboard.instantiateInitialViewController()
+                        self.present(vc!, animated: true, completion: nil)
                     }
-                }))
-                self.present(alert, animated: true, completion: nil)
-                
+                }
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
             })
         }
         else {
@@ -128,12 +91,8 @@ class LoginVC: UIViewController {
         }
         
     }
-    @IBAction func changePwdPressed(_ sender: Any) {
-        
-        
-    }
+
     @IBAction func forgotPwdPressed(_ sender: Any) {
-        
         
     }
     
