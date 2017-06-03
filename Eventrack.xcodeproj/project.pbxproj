@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D46C091FDFF685D270CF2413 /* Pods_Eventrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61ED294C97B0B8DB7D1DF912 /* Pods_Eventrack.framework */; };
+		D80BFC5C1ED21A9D000414EF /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC5B1ED21A9D000414EF /* categoryCell.swift */; };
+		D80BFC5E1ED225CE000414EF /* CustomizableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC5D1ED225CE000414EF /* CustomizableTextView.swift */; };
+		D80BFC621ED230F5000414EF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC611ED230F5000414EF /* DataService.swift */; };
+		D80BFC641ED2354A000414EF /* CreateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC631ED2354A000414EF /* CreateTVC.swift */; };
 		D80DC7DA1EBF35CF00C2DB22 /* RegEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DC7D91EBF35CF00C2DB22 /* RegEventCell.swift */; };
 		D80DC7DC1EBF42C600C2DB22 /* SearchTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DC7DB1EBF42C600C2DB22 /* SearchTopCell.swift */; };
-		D81122501EBDAAF60074CB4A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811224F1EBDAAF60074CB4A /* DataService.swift */; };
 		D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192421EBC78B500D4B191 /* MenuTopCell.swift */; };
 		D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */; };
 		D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81192461EBC9D6D00D4B191 /* LoginVC.swift */; };
@@ -21,8 +24,6 @@
 		D82E88181EBEE4DC00C6269F /* SearchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */; };
 		D82E881A1EBEE50C00C6269F /* MyEventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */; };
 		D82E881C1EBF074A00C6269F /* MyTicketsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */; };
-		D82E881E1EBF076A00C6269F /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881D1EBF076A00C6269F /* CreateEventVC.swift */; };
-		D82E88201EBF078400C6269F /* ViewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E881F1EBF078400C6269F /* ViewEventVC.swift */; };
 		D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */; };
 		D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */; };
 		D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D857FECC1EBC0B1300097BE3 /* SWRevealViewController.m */; };
@@ -32,6 +33,8 @@
 		D86AA9A91ED09F6B005B3006 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9A81ED09F6B005B3006 /* MyProfileVC.swift */; };
 		D86AA9AD1ED0B0BC005B3006 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9AC1ED0B0BC005B3006 /* ForgotPasswordVC.swift */; };
 		D86AA9AF1ED0BA5F005B3006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86AA9AE1ED0BA5F005B3006 /* User.swift */; };
+		D870D4371EDEAB33002F5989 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D870D4361EDEAB33002F5989 /* Event.swift */; };
+		D8BAEF3E1ED259BF005F5449 /* ViewEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BAEF3D1ED259BF005F5449 /* ViewEventVC.swift */; };
 		D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */; };
 		D8C2C9F61EB46CB9002F6F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C2C9F41EB46CB9002F6F36 /* Main.storyboard */; };
 		D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8C2C9F71EB46CB9002F6F36 /* Eventrack.xcdatamodeld */; };
@@ -77,10 +80,13 @@
 		8E57EE249B0C24369B211AC0 /* Pods_EventrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9A4EE97008DC8762ADC44 /* Pods-Eventrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eventrack/Pods-Eventrack.release.xcconfig"; sourceTree = "<group>"; };
 		A904DAA61F4AB1A0AAAC1704 /* Pods_EventrackUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventrackUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80BFC5B1ED21A9D000414EF /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
+		D80BFC5D1ED225CE000414EF /* CustomizableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTextView.swift; sourceTree = "<group>"; };
+		D80BFC611ED230F5000414EF /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D80BFC631ED2354A000414EF /* CreateTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTVC.swift; sourceTree = "<group>"; };
 		D80DC7D91EBF35CF00C2DB22 /* RegEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegEventCell.swift; sourceTree = "<group>"; };
 		D80DC7DB1EBF42C600C2DB22 /* SearchTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTopCell.swift; sourceTree = "<group>"; };
 		D81023BD1EBDE0B300BE780B /* Eventrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eventrack.entitlements; sourceTree = "<group>"; };
-		D811224F1EBDAAF60074CB4A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D81192421EBC78B500D4B191 /* MenuTopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTopCell.swift; sourceTree = "<group>"; };
 		D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBottomCell.swift; sourceTree = "<group>"; };
 		D81192461EBC9D6D00D4B191 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -91,8 +97,6 @@
 		D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableVC.swift; sourceTree = "<group>"; };
 		D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventTableVC.swift; sourceTree = "<group>"; };
 		D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsTableVC.swift; sourceTree = "<group>"; };
-		D82E881D1EBF076A00C6269F /* CreateEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
-		D82E881F1EBF078400C6269F /* ViewEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventVC.swift; sourceTree = "<group>"; };
 		D82FBB4A1EBC19E200CDCBAE /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D82FBB4E1EBC50E200CDCBAE /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		D857FECA1EBC0B1200097BE3 /* Eventrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Eventrack-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		D86AA9A81ED09F6B005B3006 /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		D86AA9AC1ED0B0BC005B3006 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		D86AA9AE1ED0BA5F005B3006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D870D4361EDEAB33002F5989 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D8BAEF3D1ED259BF005F5449 /* ViewEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventVC.swift; sourceTree = "<group>"; };
 		D8C2C9ED1EB46CB8002F6F36 /* Eventrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C2C9F01EB46CB8002F6F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8C2C9F51EB46CB9002F6F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,9 +199,9 @@
 				D82E88171EBEE4DC00C6269F /* SearchTableVC.swift */,
 				D82E88191EBEE50C00C6269F /* MyEventTableVC.swift */,
 				D82E881B1EBF074A00C6269F /* MyTicketsTableVC.swift */,
-				D82E881D1EBF076A00C6269F /* CreateEventVC.swift */,
-				D82E881F1EBF078400C6269F /* ViewEventVC.swift */,
 				D8D82BBD1EBF5DC0005CBCDC /* SearchVC.swift */,
+				D80BFC631ED2354A000414EF /* CreateTVC.swift */,
+				D8BAEF3D1ED259BF005F5449 /* ViewEventVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 				D86AA9A41ED086D1005B3006 /* CustomizableButton.swift */,
 				D86AA9A61ED087C0005B3006 /* CustomizableTextField.swift */,
 				D86AA9AE1ED0BA5F005B3006 /* User.swift */,
+				D870D4361EDEAB33002F5989 /* Event.swift */,
+				D80BFC5D1ED225CE000414EF /* CustomizableTextView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				D81192441EBC7D8100D4B191 /* MenuBottomCell.swift */,
 				D80DC7D91EBF35CF00C2DB22 /* RegEventCell.swift */,
 				D80DC7DB1EBF42C600C2DB22 /* SearchTopCell.swift */,
+				D80BFC5B1ED21A9D000414EF /* categoryCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -228,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				D81192491EBCACD400D4B191 /* AuthService.swift */,
-				D811224F1EBDAAF60074CB4A /* DataService.swift */,
+				D80BFC611ED230F5000414EF /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -602,22 +611,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				D857FECD1EBC0B1300097BE3 /* SWRevealViewController.m in Sources */,
+				D80BFC641ED2354A000414EF /* CreateTVC.swift in Sources */,
 				D8D77BA11ED0197500758077 /* SignUpTVC.swift in Sources */,
 				D86AA9A51ED086D1005B3006 /* CustomizableButton.swift in Sources */,
-				D81122501EBDAAF60074CB4A /* DataService.swift in Sources */,
 				D86AA9AF1ED0BA5F005B3006 /* User.swift in Sources */,
 				D82FBB4F1EBC50E200CDCBAE /* LeftMenuTableViewController.swift in Sources */,
 				D80DC7DC1EBF42C600C2DB22 /* SearchTopCell.swift in Sources */,
 				D82E88161EBEE4CE00C6269F /* WeekendTableVC.swift in Sources */,
 				D86AA9AD1ED0B0BC005B3006 /* ForgotPasswordVC.swift in Sources */,
 				D86AA9A11ED061A6005B3006 /* CustomizableImageView.swift in Sources */,
+				D80BFC5C1ED21A9D000414EF /* categoryCell.swift in Sources */,
 				D81192471EBC9D6D00D4B191 /* LoginVC.swift in Sources */,
+				D8BAEF3E1ED259BF005F5449 /* ViewEventVC.swift in Sources */,
 				D82E88181EBEE4DC00C6269F /* SearchTableVC.swift in Sources */,
 				D82E88141EBEE4BE00C6269F /* FavouriteTableVC.swift in Sources */,
 				D8D82BBE1EBF5DC1005CBCDC /* SearchVC.swift in Sources */,
 				D86AA9A71ED087C0005B3006 /* CustomizableTextField.swift in Sources */,
 				D8D82BB81EBF4DB0005CBCDC /* KSTokenField.swift in Sources */,
 				D80DC7DA1EBF35CF00C2DB22 /* RegEventCell.swift in Sources */,
+				D870D4371EDEAB33002F5989 /* Event.swift in Sources */,
+				D80BFC5E1ED225CE000414EF /* CustomizableTextView.swift in Sources */,
 				D81192431EBC78B500D4B191 /* MenuTopCell.swift in Sources */,
 				D82E881A1EBEE50C00C6269F /* MyEventTableVC.swift in Sources */,
 				D8D82BB71EBF4DB0005CBCDC /* KSToken.swift in Sources */,
@@ -626,9 +639,8 @@
 				D8D82BBA1EBF4DB0005CBCDC /* KSUtils.swift in Sources */,
 				D82FBB4B1EBC19E200CDCBAE /* TabBarViewController.swift in Sources */,
 				D8C2C9F91EB46CB9002F6F36 /* Eventrack.xcdatamodeld in Sources */,
-				D82E881E1EBF076A00C6269F /* CreateEventVC.swift in Sources */,
+				D80BFC621ED230F5000414EF /* DataService.swift in Sources */,
 				D81192451EBC7D8100D4B191 /* MenuBottomCell.swift in Sources */,
-				D82E88201EBF078400C6269F /* ViewEventVC.swift in Sources */,
 				D86AA9A91ED09F6B005B3006 /* MyProfileVC.swift in Sources */,
 				D82E88121EBEE4A800C6269F /* PopularTableVC.swift in Sources */,
 				D8C2C9F11EB46CB8002F6F36 /* AppDelegate.swift in Sources */,

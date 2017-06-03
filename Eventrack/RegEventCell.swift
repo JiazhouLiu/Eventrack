@@ -12,6 +12,12 @@ class RegEventCell: UITableViewCell {
     
     @IBOutlet weak var eventContainerView: UIView!
     
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventStatus: UILabel!
+    @IBOutlet weak var eventTag: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,6 +13,10 @@ class MenuTopCell: UITableViewCell {
     @IBOutlet weak var MenuTopTitle: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var menuDesc: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userWelcome: UILabel!
+    @IBOutlet weak var userImage: CustomizableImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

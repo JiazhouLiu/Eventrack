@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class PopularTableVC: UITableViewController {
 
     @IBOutlet weak var navMenuButton: UIBarButtonItem!
+    //static var eventNum: Int = 0
+    var eventsArray = [Dictionary<String, AnyObject>]()
+    var initialLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,60 @@ class PopularTableVC: UITableViewController {
         self.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: uicolorFromHex(rgbValue: 0x2B8A36)], for:.selected)
         UINavigationBar.appearance().tintColor = UIColor.white
         self.addSampleCat()
+        
+        
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("events").child("eventsList").observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+            // Get event details
+            if let eventList = snapshot.value as? Dictionary<String, AnyObject>{
+                for (_, value) in eventList {
+                    if value is Dictionary<String, AnyObject>{
+                        self.tableView.reloadData()
+                        self.initialLoad = false
+                        print("\(self.eventsArray.count) and \(self.initialLoad)")
+                        //PopularTableVC.eventNum += 1
+                        //print(self.eventNum)
+                        let eventName = value["eventName"] as? String ?? ""
+                        
+                        let eventDate = value["eventDate"] as? String ?? ""
+                        let eventTag = value["eventTag"] as? String ?? ""
+                        let eventStatus = value["eventStatus"] as? String ?? ""
+                        let storageRef: FIRStorageReference! = DataService.instance.storageRef
+                        // create path for user image
+                        let imagePath = "eventImage\(eventName.removingWhitespaces())/eventPoster.jpg"
+                        
+                        // create image reference
+                        let imageRef = storageRef.child(imagePath)
+                        imageRef.data(withMaxSize: 10 * 1024 * 1024, completion: { (data, error) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            }else{
+                                if let data = data {
+                                    let eventImage = UIImage(data: data)!
+                                    self.eventsArray.append(["name": eventName as AnyObject, "date": eventDate as AnyObject, "tag": eventTag as AnyObject, "image": eventImage, "status": eventStatus as AnyObject])
+                                    //print("first: \(self.eventsArray.count)")
+                                    
+                                }
+                                
+                            }
+                        })
+                        
+                        
+                    }
+                }
+                
+            }
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        if ( self.initialLoad == false ) {
+            self.tableView.reloadData()
+        }
+        print("\(self.eventsArray.count) and \(self.initialLoad)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +86,7 @@ class PopularTableVC: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        eventsArray.removeAll()
         if self.revealViewController() != nil {
             
             revealViewController().rearViewRevealWidth = 300
@@ -42,6 +103,17 @@ class PopularTableVC: UITableViewController {
             
         }
         
+        
+    }
+    
+    func handleChildAdded(snapshot: FIRDataSnapshot) {
+        
+        
+        
+        //upon first load, don't reload the tableView until all children are loaded
+        if ( self.initialLoad == false ) {
+            self.tableView.reloadData()
+        }    
     }
     
     func swipeToRightVC(_ recognizer: UISwipeGestureRecognizer) {
@@ -69,6 +141,12 @@ class PopularTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        //print(PopularTableVC.eventNum)
+        /*if let numberRows = self.eventsArray.count{
+            //print(numberRows)
+            return numberRows
+        }*/
+        
         return 5
     }
     
@@ -98,8 +176,12 @@ class PopularTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RegEventCell", for: indexPath) as! RegEventCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RegEventCell", for: indexPath) as! RegEventCell/*
+        cell.eventTitle.text = eventsArray[indexPath.row]["name"] as? String
+        cell.eventStatus.text = eventsArray[indexPath.row]["status"] as? String
+        cell.eventTag.text = eventsArray[indexPath.row]["tag"] as? String
+        cell.eventDate.text = eventsArray[indexPath.row]["date"] as? String
+        cell.eventImage.image = eventsArray[indexPath.row]["image"] as? UIImage*/
         return cell
     }
     
@@ -107,6 +189,11 @@ class PopularTableVC: UITableViewController {
     {
         return 250.0
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

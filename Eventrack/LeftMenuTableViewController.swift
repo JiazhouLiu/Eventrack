@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class LeftMenuTableViewController: UITableViewController {
 
@@ -45,8 +46,6 @@ class LeftMenuTableViewController: UITableViewController {
 
     @IBAction func titleTapped(_ sender: Any) {
         if FIRAuth.auth()?.currentUser != nil{
-            
-            
             performSegue(withIdentifier: "leftPanelToProfile", sender: nil)
         }
     
@@ -56,10 +55,21 @@ class LeftMenuTableViewController: UITableViewController {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath) as! MenuTopCell
             if FIRAuth.auth()?.currentUser == nil{
-                cell.MenuTopTitle.text = "Eventrack"
                 cell.loginBtn.setTitle("Log In", for: .normal)
                 cell.loginBtn.addTarget(self, action: #selector(loginFC(button:)), for: .touchUpInside)
+                cell.loginBtn.isHidden = false
+                cell.MenuTopTitle.isHidden = false
+                cell.menuDesc.isHidden = false
+                cell.userNameLabel.isHidden = true
+                cell.userImage.isHidden = true
+                cell.userWelcome.isHidden = true
             }else{
+                cell.loginBtn.isHidden = true
+                cell.MenuTopTitle.isHidden = true
+                cell.menuDesc.isHidden = true
+                cell.userNameLabel.isHidden = false
+                cell.userImage.isHidden = false
+                cell.userWelcome.isHidden = false
                 var ref: FIRDatabaseReference!
                 ref = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
@@ -67,16 +77,26 @@ class LeftMenuTableViewController: UITableViewController {
                     // Get user value
                     let value = snapshot.value as? NSDictionary
                     let displayName = value?["username"] as? String ?? ""
-                    cell.MenuTopTitle.text = displayName
+                    cell.userNameLabel.text = displayName
+                    
+                    let storageRef: FIRStorageReference! = DataService.instance.storageRef
+                    // create path for user image
+                    let imagePath = "profileImage\(userID!)/userPic.jpg"
+                    
+                    // create image reference
+                    let imageRef = storageRef.child(imagePath)
+                    imageRef.data(withMaxSize: 10 * 1024 * 1024, completion: { (data, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }else{
+                            if let data = data {
+                                cell.userImage.image = UIImage(data: data)
+                            }
+                        }
+                    })
                 }) { (error) in
                     print(error.localizedDescription)
                 }
-                
-                
-                cell.menuDesc.text = "Welcome to Eventrack"
-                
-                cell.loginBtn.setTitle("Log Out", for: .normal)
-                cell.loginBtn.addTarget(self, action: #selector(logoutFC(button:)), for: .touchUpInside)
             }
             return cell
         }
@@ -120,23 +140,52 @@ class LeftMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let section = indexPath.section
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         if section == 1{
             switch row{
             case 0:
                 // Create an event
-                performSegue(withIdentifier: "LeftMenuToCreate", sender: nil)
+                if FIRAuth.auth()?.currentUser != nil{
+                    performSegue(withIdentifier: "LeftMenuToCreate", sender: nil)
+                }
+                else{
+                    let alert = UIAlertController(title: "Login Required", message: "You must login first to create an event", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
                 break
             case 1:
                 // My Events
-                performSegue(withIdentifier: "LeftMenuToMyEvents", sender: nil)
+                if FIRAuth.auth()?.currentUser != nil{
+                    performSegue(withIdentifier: "LeftMenuToMyEvents", sender: nil)
+                }
+                else{
+                    let alert = UIAlertController(title: "Login Required", message: "You must login first to view my events", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
                 break
             case 2:
                 //My Tickets
-                performSegue(withIdentifier: "LeftMenuToMyTickets", sender: nil)
+                if FIRAuth.auth()?.currentUser != nil{
+                    performSegue(withIdentifier: "LeftMenuToMyTickets", sender: nil)
+                }
+                else{
+                    let alert = UIAlertController(title: "Login Required", message: "You must login first to view my tickets", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
                 break
             case 3:
                 //My favourite
-                performSegue(withIdentifier: "LeftMenuToFavouriteSegue", sender: nil)
+                if FIRAuth.auth()?.currentUser != nil{
+                    performSegue(withIdentifier: "LeftMenuToFavouriteSegue", sender: nil)
+                }
+                else{
+                    let alert = UIAlertController(title: "Login Required", message: "You must login first to view my favourite events", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
                 break
             case 4:
                 // Search Events

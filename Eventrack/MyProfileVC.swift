@@ -133,7 +133,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.dismiss(animated: true, completion: nil)
             self.userImageView.image = pickedImage
         }
@@ -179,7 +179,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             AuthService.instance.logout()
             
         }
-        let alertController = UIAlertController(title: "Success", message: "You have successfully updated your profile", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Success", message: "You have successfully logged out", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "profileToHome", sender: nil)

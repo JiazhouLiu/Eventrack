@@ -2,7 +2,7 @@
 //  ViewEventVC.swift
 //  Eventrack
 //
-//  Created by Jiazhou Liu on 7/5/17.
+//  Created by Jiazhou Liu on 22/5/17.
 //  Copyright © 2017 Jiazhou Liu. All rights reserved.
 //
 
@@ -21,6 +21,9 @@ class ViewEventVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil);
+    }
 
     /*
     // MARK: - Navigation
