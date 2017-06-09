@@ -10,6 +10,7 @@ import UIKit
 
 class MenuTopCell: UITableViewCell {
 
+    // IBOutlets
     @IBOutlet weak var MenuTopTitle: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var menuDesc: UILabel!
@@ -17,10 +18,11 @@ class MenuTopCell: UITableViewCell {
     @IBOutlet weak var userWelcome: UILabel!
     @IBOutlet weak var userImage: CustomizableImageView!
     
-    
+    // cell initializor
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // login Button UI modification
         loginBtn.backgroundColor = .clear
         loginBtn.layer.cornerRadius = 5
         loginBtn.layer.borderWidth = 1

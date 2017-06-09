@@ -10,10 +10,11 @@ import UIKit
 
 class MenuBottomCell: UITableViewCell {
 
+    // IBOutlets
     @IBOutlet weak var menuImg: UIImageView!
     @IBOutlet weak var menuText: UILabel!
     
-    
+    // cell initializor
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

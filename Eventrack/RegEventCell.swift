@@ -10,6 +10,7 @@ import UIKit
 
 class RegEventCell: UITableViewCell {
     
+    // IBOutlets
     @IBOutlet weak var eventContainerView: UIView!
     
     @IBOutlet weak var eventImage: UIImageView!
@@ -17,8 +18,10 @@ class RegEventCell: UITableViewCell {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventStatus: UILabel!
     @IBOutlet weak var eventTag: UILabel!
-    
+    @IBOutlet weak var eventViewNumber: UILabel!
+    @IBOutlet weak var viewImg: UIImageView!
 
+    // cell initilizor
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

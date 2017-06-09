@@ -10,14 +10,16 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-struct User {
+// user class and get attribute from database snapshot
+class User {
     
     var username: String!
     var email: String!
     var photoURL: String!
     var country: String!
+    var uid: String?
     var ref: FIRDatabaseReference?
-    var key: String
+    var key: String?
     
     init(snapshot: FIRDataSnapshot){
         
@@ -27,5 +29,11 @@ struct User {
         photoURL = snapshot.value(forKey: "photoURL") as! String
         country = snapshot.value(forKey: "country") as! String
         ref = snapshot.ref
+    }
+    init(username: String, email: String, photoURL: String, country: String){
+        self.username = username
+        self.email = email
+        self.photoURL = photoURL
+        self.country = country
     }
 }

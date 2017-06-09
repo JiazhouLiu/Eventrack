@@ -10,12 +10,15 @@ import UIKit
 
 @IBDesignable class CustomizableButton: UIButton {
 
+    // add cornerRadius attribute for UIButton
     @IBInspectable var cornerRadius: CGFloat = 0 {
         
         didSet{
             layer.cornerRadius = cornerRadius
         }
     }
+    
+    // add cornerRadius attribute for UIButton
     @IBInspectable var borderWidth: CGFloat = 0 {
         
         didSet{

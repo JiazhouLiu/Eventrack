@@ -10,6 +10,7 @@ import UIKit
 
 class categoryCell: UITableViewCell {
 
+    // cell initilizor
     override func awakeFromNib() {
         super.awakeFromNib()
         self.clipsToBounds = false;                        //cell's view

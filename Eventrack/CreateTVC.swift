@@ -3,6 +3,7 @@
 //  Eventrack
 //
 //  Created by Jiazhou Liu on 22/5/17.
+//  Version 3.0 9/6/2017
 //  Copyright © 2017 Jiazhou Liu. All rights reserved.
 //
 
@@ -14,6 +15,7 @@ import FirebaseAuth
 
 class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate{
 
+    // variables
     @IBOutlet weak var eventTitleTF: UITextField!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventLocation: UITextField!
@@ -24,9 +26,44 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var publishBtn: CustomizableButton!
     @IBOutlet weak var eventDatePicker: UIDatePicker!
     
+    @IBOutlet weak var removeBtn: UIBarButtonItem!
     var event: Event?
+    var currentEvent: Event?
     
     var dateString: String?
+    
+    // remove event button pressed
+    @IBAction func removeBtnPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Remove Event Draft", message: "Are you sure to remove the draft?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let removeAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            DataService.instance.removeEvent(eventID: (self.event?.eventID)!)
+            let alert = UIAlertController(title: "Event Draft Removed", message: "You have successfully removed the draft", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                self.navigationController?.popViewController(animated: true)
+                self.tabBarController?.tabBar.isHidden = false
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel)
+        alertController.addAction(removeAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // back button based on from screen
+    @IBAction func backButtonPressed(_ sender: Any) {
+        if currentEvent == nil{
+            if let storyboard = self.storyboard {
+                let vc = storyboard.instantiateInitialViewController()
+                self.present(vc!, animated: true, completion: nil)
+            }
+        }else{
+            navigationController?.popViewController(animated: true)
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
  
         // Do any additional setup after loading the view.
     override func viewDidLoad() {
@@ -41,56 +78,70 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
         
         dateFormatter.dateFormat = "E, MMMM dd yyyy', 'h:mm a"
         
-        
         self.dateString = dateFormatter.string(from: date)
         eventDatePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-
+        if currentEvent != nil{
+            assignValue()
+            self.event = self.currentEvent
+            self.saveDraftBtn.setTitle("Update", for: .normal)
+        }
+        if self.event != nil{
+            self.removeBtn.isEnabled = true
+        }else{
+            self.removeBtn.isEnabled = false
+        }
         
     }
     
+    // if navigate from draft, then assign original value
+    func assignValue(){
+        eventTitleTF.text = currentEvent?.eventName
+        eventDetailsTF.text = currentEvent?.eventDetail
+        eventTagsTF.text = currentEvent?.eventTags.joined(separator: ";")
+        eventImage.image = currentEvent?.eventPoster
+        eventDatePicker.date = stringToDate(dateString: (currentEvent?.eventDate)!)
+        self.dateString = currentEvent?.eventDate
+        eventLocation.text = currentEvent?.eventLocation
+        categoryTF.text = currentEvent?.eventCategory.joined(separator: ";")
+        
+    }
+    
+    // convert date string to date
+    func stringToDate(dateString: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, MMMM dd yyyy', 'h:mm a"
+        let date = dateFormatter.date(from: dateString)
+        return date!
+    }
+    
+    // detect date picker changed
     func dateChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "E, MMMM dd, yyyy', 'h:mm a"
+        dateFormatter.dateFormat = "E, MMMM dd yyyy', 'h:mm a"
         
         
         self.dateString = dateFormatter.string(from: sender.date)
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height:CGFloat = CGFloat()
-        height = 50
-        if indexPath.row == 1 {
-            height = 195
-        }else if indexPath.row == 4{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoryCell
-            height = cell.contentView.subviews[0].frame.height
-            print(height)
-        }else if indexPath.row == 6{
-            height = 300
-        }else if indexPath.row == 7 || indexPath.row == 8{
-            height = 60
-        }
-        
-        return height
-    }
-    
-    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // save draft button pressed and check saved or not
     @IBAction func saveDraftBtnPressed(_ sender: Any) {
         let imgData = UIImageJPEGRepresentation(self.eventImage.image!, 0.8)
+        let UIImgData = UIImage(data: imgData!)
         
         if let title = eventTitleTF.text, let date = self.dateString, let location = eventLocation.text, let tagString = eventTagsTF.text, let categoryString = categoryTF.text, let detail = eventDetailsTF.text ,(title.characters.count > 0 && date.characters.count > 0){
             //call the dataService
             let categoryRaw = categoryString.components(separatedBy: ";")
             var category = [String]()
             for singleCat in categoryRaw{
-                category.append(singleCat.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+                let trimmedCat = singleCat.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                DataService.instance.saveEventCategory(cat: trimmedCat)
+                category.append(trimmedCat)
             }
             let tagsRaw = tagString.components(separatedBy: ";")
             var tags = [String]()
@@ -103,8 +154,7 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
                 let eventCreator = (FIRAuth.auth()?.currentUser?.uid)!
                 let dataServiceInstance = DataService.instance
                 dataServiceInstance.saveEvent(eventCategory: category, eventDate: date, eventDetail: detail, eventLocation: location, eventName: title, eventPoster: imgData! as NSData, eventStaus: "draft", eventTags: tags, eventCreator: eventCreator)
-                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: imgData! as NSData, status: "draft", tags: tags, creator: eventCreator, id: dataServiceInstance.eventAutoId)
-                print(self.event!.getID())
+                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: UIImgData!, status: "draft", tags: tags, creator: eventCreator, id: dataServiceInstance.eventAutoId)
                 let alertController = UIAlertController(title: "Success", message: "You have successfully saved a draft of an event!", preferredStyle: UIAlertControllerStyle.alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
@@ -113,6 +163,7 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
                         self.present(vc!, animated: true, completion: nil)
                     }*/
                     self.saveDraftBtn.setTitle("Update", for: .normal)
+                    self.removeBtn.isEnabled = true
                 }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -122,7 +173,7 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
                 let dataServiceInstance = DataService.instance
                 let currentEventId = self.event?.getID()
                 dataServiceInstance.updateEvent(eventId: currentEventId!, eventCategory: category, eventDate: date, eventDetail: detail, eventLocation: location, eventName: title, eventPoster: imgData! as NSData, eventStaus: "draft", eventTags: tags, eventCreator: eventCreator)
-                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: imgData! as NSData, status: "draft", tags: tags, creator: eventCreator, id: currentEventId!)
+                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: UIImgData!, status: "draft", tags: tags, creator: eventCreator, id: currentEventId!)
                 print(self.event!.getID())
                 let alertController = UIAlertController(title: "Success", message: "You have successfully updated a draft of an event!", preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -143,15 +194,21 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // publish button pressed and check if pressed save draft or not
     @IBAction func publishBtnPressed(_ sender: Any) {
         let imgData = UIImageJPEGRepresentation(self.eventImage.image!, 0.8)
+        let UIImgData = UIImage(data: imgData!)
         
         if let title = eventTitleTF.text, let date = self.dateString, let location = eventLocation.text, let tagString = eventTagsTF.text, let categoryString = categoryTF.text, let detail = eventDetailsTF.text ,(title.characters.count > 0 && date.characters.count > 0){
             //call the dataService
             let categoryRaw = categoryString.components(separatedBy: ";")
             var category = [String]()
             for singleCat in categoryRaw{
-                category.append(singleCat.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+                let trimmedCat = singleCat.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                if trimmedCat != ""{
+                    DataService.instance.saveEventCategory(cat: trimmedCat)
+                }
+                category.append(trimmedCat)
             }
             let tagsRaw = tagString.components(separatedBy: ";")
             var tags = [String]()
@@ -161,10 +218,11 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
             
             // check saved or not
             if self.event == nil{
+                
                 let eventCreator = (FIRAuth.auth()?.currentUser?.uid)!
                 let dataServiceInstance = DataService.instance
                 dataServiceInstance.saveEvent(eventCategory: category, eventDate: date, eventDetail: detail, eventLocation: location, eventName: title, eventPoster: imgData! as NSData, eventStaus: "published", eventTags: tags, eventCreator: eventCreator)
-                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: imgData! as NSData, status: "published", tags: tags, creator: eventCreator, id: dataServiceInstance.eventAutoId)
+                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: UIImgData!, status: "published", tags: tags, creator: eventCreator, id: dataServiceInstance.eventAutoId)
                 let alertController = UIAlertController(title: "Success", message: "You have successfully published an event!", preferredStyle: UIAlertControllerStyle.alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
@@ -177,12 +235,13 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
                 self.present(alertController, animated: true, completion: nil)
             }
             else{
+                print("published an update version")
                 let eventCreator = (FIRAuth.auth()?.currentUser?.uid)!
                 let dataServiceInstance = DataService.instance
                 let currentEventId = self.event?.getID()
                 dataServiceInstance.updateEvent(eventId: currentEventId!, eventCategory: category, eventDate: date, eventDetail: detail, eventLocation: location, eventName: title, eventPoster: imgData! as NSData, eventStaus: "published", eventTags: tags, eventCreator: eventCreator)
-                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: imgData! as NSData, status: "published", tags: tags, creator: eventCreator, id: currentEventId!)
-                let alertController = UIAlertController(title: "Success", message: "You have successfully updated a draft of an event!", preferredStyle: UIAlertControllerStyle.alert)
+                self.event = Event(category: category, date: date, detail: detail, location: location, name: title, poster: UIImgData!, status: "published", tags: tags, creator: eventCreator, id: currentEventId!)
+                let alertController = UIAlertController(title: "Success", message: "You have successfully published a draft of an event!", preferredStyle: UIAlertControllerStyle.alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
                     if let storyboard = self.storyboard {
@@ -200,6 +259,7 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // choose image for event
     @IBAction func chooseImage(_ sender: Any) {
         let pickerController = UIImagePickerController();
         pickerController.delegate = self
@@ -245,73 +305,7 @@ class CreateTVC: UITableViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-
-    // MARK: - Table view data source
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }*/
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // convert hex value to UIColor
     func uicolorFromHex(rgbValue:UInt32)->UIColor{
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0

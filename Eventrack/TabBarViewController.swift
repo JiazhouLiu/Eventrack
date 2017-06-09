@@ -3,6 +3,7 @@
 //  Eventrack
 //
 //  Created by Jiazhou Liu on 5/5/17.
+//  Version 3.0 9/6/2017
 //  Copyright © 2017 Jiazhou Liu. All rights reserved.
 //
 
@@ -22,6 +23,7 @@ class TabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    // default tab bar controller to switch views
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         let tabViewControllers = tabBarController.viewControllers!
         guard let toIndex = tabViewControllers.index(of: viewController) else {

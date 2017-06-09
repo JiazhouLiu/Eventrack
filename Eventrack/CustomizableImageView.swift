@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class CustomizableImageView: UIImageView {
     
+    // add cornerRadius attribute for image view
     @IBInspectable var cornerRadius: CGFloat = 0 {
         
         didSet{
@@ -17,6 +18,7 @@ import UIKit
         }
     }
     
+    // add borderWidth attribute for image view
     @IBInspectable var borderWidth: CGFloat = 0 {
         
         didSet{

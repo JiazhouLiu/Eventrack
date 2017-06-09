@@ -10,12 +10,16 @@ import UIKit
 
 @IBDesignable class CustomizableTextField: UITextField {
 
+    
+    // add cornerRadius attribute for UITextField
     @IBInspectable var cornerRadius: CGFloat = 0 {
         
         didSet{
             layer.cornerRadius = cornerRadius
         }
     }
+    
+    // add cornerRadius attribute for UITextField
     @IBInspectable var borderWidth: CGFloat = 0 {
         
         didSet{

@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class CustomizableTextView: UITextView {
     
+    // add cornerRadius attribute for UITextView
     @IBInspectable var cornerRadius: CGFloat = 0 {
         
         didSet{
@@ -17,6 +18,7 @@ import UIKit
         }
     }
     
+    // add cornerRadius attribute for UITextView
     @IBInspectable var borderWidth: CGFloat = 0 {
         
         didSet{

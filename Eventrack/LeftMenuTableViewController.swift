@@ -3,6 +3,7 @@
 //  Eventrack
 //
 //  Created by Jiazhou Liu on 5/5/17.
+//  Version 3.0 9/6/2017
 //  Copyright © 2017 Jiazhou Liu. All rights reserved.
 //
 
@@ -13,6 +14,8 @@ import FirebaseStorage
 
 class LeftMenuTableViewController: UITableViewController {
 
+    var spinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,14 +42,14 @@ class LeftMenuTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         switch (section){
             case 0: return 1
-            case 1: return 5
+            case 1: return 6    // 6 navations
             default: return 0
         }
     }
 
     @IBAction func titleTapped(_ sender: Any) {
         if FIRAuth.auth()?.currentUser != nil{
-            performSegue(withIdentifier: "leftPanelToProfile", sender: nil)
+            performSegue(withIdentifier: "leftPanelToProfile", sender: nil) // navigate to profile screen
         }
     
     }
@@ -54,7 +57,7 @@ class LeftMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTopTableViewCell", for: indexPath) as! MenuTopCell
-            if FIRAuth.auth()?.currentUser == nil{
+            if FIRAuth.auth()?.currentUser == nil{ // Not log in status
                 cell.loginBtn.setTitle("Log In", for: .normal)
                 cell.loginBtn.addTarget(self, action: #selector(loginFC(button:)), for: .touchUpInside)
                 cell.loginBtn.isHidden = false
@@ -63,7 +66,7 @@ class LeftMenuTableViewController: UITableViewController {
                 cell.userNameLabel.isHidden = true
                 cell.userImage.isHidden = true
                 cell.userWelcome.isHidden = true
-            }else{
+            }else{  // Logged in status
                 cell.loginBtn.isHidden = true
                 cell.MenuTopTitle.isHidden = true
                 cell.menuDesc.isHidden = true
@@ -73,6 +76,15 @@ class LeftMenuTableViewController: UITableViewController {
                 var ref: FIRDatabaseReference!
                 ref = FIRDatabase.database().reference()
                 let userID = FIRAuth.auth()?.currentUser?.uid
+                
+                self.spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height:40))
+                self.spinner.color = UIColor.lightGray
+                self.spinner.center = cell.userImage.center
+                cell.contentView.addSubview(spinner)
+                self.spinner.hidesWhenStopped = true
+                self.spinner.startAnimating()
+                
+                // get user attribute from database and display it in the top cell
                 ref.child("users").child(userID!).child("profile").observeSingleEvent(of: .value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
@@ -91,6 +103,7 @@ class LeftMenuTableViewController: UITableViewController {
                         }else{
                             if let data = data {
                                 cell.userImage.image = UIImage(data: data)
+                                self.spinner.stopAnimating()
                             }
                         }
                     })
@@ -100,25 +113,28 @@ class LeftMenuTableViewController: UITableViewController {
             }
             return cell
         }
-        else{
+        else{   // bottom cells
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuBottomTableViewCell", for: indexPath) as! MenuBottomCell
             
             switch (indexPath.row){
-            case 0:
+            case 0: // create event function and screen
                 cell.menuText.text = "Create an Event"
                 cell.menuImg.image = #imageLiteral(resourceName: "Add-Events")
-            case 1:
+            case 1: // my event function and screen
                 cell.menuText.text = "My Events"
                 cell.menuImg.image = #imageLiteral(resourceName: "My-Events")
-            case 2:
+            case 2: // my ticket function and screen
                 cell.menuText.text = "My Tickets"
                 cell.menuImg.image = #imageLiteral(resourceName: "My-Tickets")
-            case 3:
+            case 3: // my favourite function and screen
                 cell.menuText.text = "My Favourites"
                 cell.menuImg.image = #imageLiteral(resourceName: "Favourite-Event")
-            case 4:
+            case 4: // search event function and screen
                 cell.menuText.text = "Search Events"
                 cell.menuImg.image = #imageLiteral(resourceName: "Search-Events")
+            case 5: // about page screen
+                cell.menuText.text = "About Page"
+                cell.menuImg.image = #imageLiteral(resourceName: "about")
             default: return cell
             }
             
@@ -126,13 +142,14 @@ class LeftMenuTableViewController: UITableViewController {
         }
     }
     
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.section == 0{
-            return 230.0
+            return 230.0    // top cell height
         }
         else{
-            return 60.0;
+            return 60.0;    // bottom cells height
         }
         
     }
@@ -191,6 +208,8 @@ class LeftMenuTableViewController: UITableViewController {
                 // Search Events
                 performSegue(withIdentifier: "LeftMenuToSearchSegue", sender: nil)
                 break
+            case 5:
+                performSegue(withIdentifier: "LeftMenuToAboutSegue", sender: nil)
             default:
                 break
             }
@@ -199,8 +218,10 @@ class LeftMenuTableViewController: UITableViewController {
 
  
     func loginFC(button: UIButton){
-        performSegue(withIdentifier: "loginVC", sender: nil)
+        performSegue(withIdentifier: "loginVC", sender: nil)    // navigate to login screen
     }
+    
+    // logout function
     func logoutFC(button: UIButton){
         AuthService.instance.logout()
         let alertController = UIAlertController(title: "Success", message: "You have successfully logged out!", preferredStyle: UIAlertControllerStyle.alert)
@@ -235,42 +256,7 @@ class LeftMenuTableViewController: UITableViewController {
         })
     }
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    // prepare for segue and congigure the tab bar view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

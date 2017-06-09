@@ -2,4 +2,129 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EventrackTests/UserTests.swift"
+            timestampString = "518683717.90408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "UserTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.__deallocating_deinit"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.284153"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.init (invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.292319"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.__allocating_init (invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.297618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.init (selector : ObjectiveC.Selector) -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.302808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.__allocating_init (selector : ObjectiveC.Selector) -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.3088"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.init () -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.313423"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventrackTests.UserTests.__allocating_init () -&gt; EventrackTests.UserTests"
+                  moduleName = "EventrackTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joe/Desktop/Eventrack/EventrackTests/UserTests.swift"
+                  timestampString = "518683724.319357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

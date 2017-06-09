@@ -1,4 +1,4 @@
-//
+	//
 //  EventrackTests.swift
 //  EventrackTests
 //
@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Eventrack
+//@testable import Eventrack
 
 class EventrackTests: XCTestCase {
     
